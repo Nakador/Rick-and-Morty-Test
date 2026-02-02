@@ -35,6 +35,12 @@ export const StyledSelect = styled.select<{ $width?: string }>`
     option {
       border-radius: ${props => props.theme.radii.xl};
     }
+    
+    option::checkmark {
+      display: block;
+      margin-left: ${props => props.theme.spacing.sm};
+      margin-top: ${props => props.theme.spacing.xs};
+    }
   }
 
 `;
