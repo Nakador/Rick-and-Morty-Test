@@ -7,6 +7,7 @@ import { isEmpty } from '../../../app/utils/typeGuards/typeGuards';
 export interface AutocompleteOption {
   value: string;
   label: string;
+  id?: string | number;
   [key: string]: unknown;
 }
 
@@ -88,9 +89,9 @@ export const Autocomplete = <T extends AutocompleteOption = AutocompleteOption>(
       />
       {isOpen && !isEmpty(filteredOptions) && (
         <SuggestionsList data-testid="suggestions-list">
-          {filteredOptions.map((option) => (
+          {filteredOptions.map((option, index) => (
             <SuggestionItem
-              key={option.value}
+              key={option.id ? String(option.id) : `${option.value}-${index}`}
               onClick={() => handleSelectOption(option)}
               onMouseDown={(e) => e.preventDefault()}
             >
