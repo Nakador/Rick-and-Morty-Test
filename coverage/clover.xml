@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1770031614534" clover="3.2.0">
+  <project timestamp="1770031614534" name="All files">
+    <metrics statements="467" coveredstatements="447" conditionals="146" coveredconditionals="124" methods="152" coveredmethods="146" elements="765" coveredelements="717" complexity="0" loc="467" ncloc="467" packages="29" files="75" classes="75"/>
+    <package name="components.atoms.backdrop">
+      <metrics statements="13" coveredstatements="13" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="backdrop.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/backdrop/backdrop.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="12" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="3" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/backdrop/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/backdrop/styles.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="39" count="3" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.atoms.box">
+      <metrics statements="9" coveredstatements="9" conditionals="5" coveredconditionals="5" methods="3" coveredmethods="3"/>
+      <file name="box.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/box/box.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="18" count="30" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/box/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/box/styles.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="30" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="30" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="components.atoms.button">
+      <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="8" coveredmethods="8"/>
+      <file name="button.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/button/button.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="11" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="20" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/button/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/button/styles.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="20" type="stmt"/>
+        <line num="5" count="20" type="stmt"/>
+        <line num="6" count="20" type="stmt"/>
+        <line num="8" count="20" type="stmt"/>
+        <line num="10" count="20" type="stmt"/>
+        <line num="19" count="20" type="stmt"/>
+        <line num="20" count="20" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.atoms.flex">
+      <metrics statements="12" coveredstatements="12" conditionals="11" coveredconditionals="11" methods="6" coveredmethods="6"/>
+      <file name="flex.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/flex/flex.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="21" count="24" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/flex/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/flex/styles.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="5"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="13" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="24" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="components.atoms.image">
+      <metrics statements="8" coveredstatements="8" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
+      <file name="image.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/image/image.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="11" count="18" type="cond" truecount="1" falsecount="0"/>
+      </file>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/image/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/image/styles.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="18" type="cond" truecount="4" falsecount="0"/>
+        <line num="10" count="18" type="cond" truecount="4" falsecount="0"/>
+      </file>
+    </package>
+    <package name="components.atoms.input">
+      <metrics statements="13" coveredstatements="13" conditionals="1" coveredconditionals="1" methods="8" coveredmethods="8"/>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/input/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+      </file>
+      <file name="input.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/input/input.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="11" count="15" type="cond" truecount="1" falsecount="0"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/input/styles.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="15" type="stmt"/>
+        <line num="5" count="15" type="stmt"/>
+        <line num="6" count="15" type="stmt"/>
+        <line num="7" count="15" type="stmt"/>
+        <line num="8" count="15" type="stmt"/>
+        <line num="9" count="15" type="stmt"/>
+        <line num="13" count="15" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.atoms.scrollToTop">
+      <metrics statements="25" coveredstatements="24" conditionals="7" coveredconditionals="6" methods="12" coveredmethods="12"/>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/scrollToTop/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+      <file name="scrollToTop.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/scrollToTop/scrollToTop.tsx">
+        <metrics statements="14" coveredstatements="13" conditionals="3" coveredconditionals="2" methods="5" coveredmethods="5"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="11" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="35" count="6" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/scrollToTop/styles.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="19" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.atoms.select">
+      <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="9" coveredmethods="9"/>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/select/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+      </file>
+      <file name="select.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/select/select.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="11" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="39" type="stmt"/>
+        <line num="14" count="150" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/select/styles.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="39" type="stmt"/>
+        <line num="5" count="39" type="stmt"/>
+        <line num="6" count="39" type="stmt"/>
+        <line num="7" count="39" type="stmt"/>
+        <line num="8" count="39" type="stmt"/>
+        <line num="9" count="39" type="stmt"/>
+        <line num="13" count="39" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.atoms.text">
+      <metrics statements="12" coveredstatements="12" conditionals="12" coveredconditionals="12" methods="6" coveredmethods="6"/>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/text/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/text/styles.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="5"/>
+        <line num="1" count="10" type="stmt"/>
+        <line num="17" count="10" type="stmt"/>
+        <line num="19" count="95" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="95" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="95" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="95" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="95" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="text.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/atoms/text/text.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="11" count="10" type="stmt"/>
+        <line num="22" count="95" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.molecules.infoRow">
+      <metrics statements="11" coveredstatements="11" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/molecules/infoRow/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+      </file>
+      <file name="infoRow.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/molecules/infoRow/infoRow.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="19" count="15" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/molecules/infoRow/styles.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.molecules.pagination">
+      <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/molecules/pagination/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+      <file name="pagination.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/molecules/pagination/pagination.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="23" count="7" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/molecules/pagination/styles.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.molecules.statusBadge">
+      <metrics statements="13" coveredstatements="12" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/molecules/statusBadge/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+      </file>
+      <file name="statusBadge.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/molecules/statusBadge/statusBadge.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="19" count="14" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/molecules/statusBadge/styles.ts">
+        <metrics statements="6" coveredstatements="5" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="8" count="14" type="cond" truecount="2" falsecount="1"/>
+        <line num="9" count="13" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.organisms.characterCard">
+      <metrics statements="21" coveredstatements="21" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="7"/>
+      <file name="characterCard.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/organisms/characterCard/characterCard.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="21" count="9" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/organisms/characterCard/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/organisms/characterCard/styles.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="8" count="9" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="9" type="stmt"/>
+        <line num="25" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.organisms.characterDetailsCard">
+      <metrics statements="22" coveredstatements="22" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="7"/>
+      <file name="characterDetailsCard.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/organisms/characterDetailsCard/characterDetailsCard.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/organisms/characterDetailsCard/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/organisms/characterDetailsCard/styles.ts">
+        <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.organisms.errorPage">
+      <metrics statements="23" coveredstatements="22" conditionals="5" coveredconditionals="4" methods="10" coveredmethods="10"/>
+      <file name="errorPage.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/organisms/errorPage/errorPage.tsx">
+        <metrics statements="8" coveredstatements="7" conditionals="5" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="18" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="25" count="6" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/organisms/errorPage/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/organisms/errorPage/styles.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="29" count="6" type="stmt"/>
+        <line num="33" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.organisms.filterBar">
+      <metrics statements="40" coveredstatements="40" conditionals="13" coveredconditionals="13" methods="20" coveredmethods="20"/>
+      <file name="consts.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/organisms/filterBar/consts.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+      </file>
+      <file name="filterBar.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/organisms/filterBar/filterBar.tsx">
+        <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="11" methods="7" coveredmethods="7"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="23" count="12" type="stmt"/>
+        <line num="25" count="12" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="29" count="12" type="stmt"/>
+        <line num="38" count="8" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/organisms/filterBar/index.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/organisms/filterBar/styles.ts">
+        <metrics statements="19" coveredstatements="19" conditionals="2" coveredconditionals="2" methods="13" coveredmethods="13"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="12" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="53" count="12" type="stmt"/>
+        <line num="54" count="12" type="stmt"/>
+        <line num="56" count="12" type="stmt"/>
+        <line num="57" count="12" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.templates.mainLayout">
+      <metrics statements="16" coveredstatements="16" conditionals="3" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <file name="mainLayout.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/templates/mainLayout/mainLayout.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/components/templates/mainLayout/styles.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="context">
+      <metrics statements="28" coveredstatements="24" conditionals="10" coveredconditionals="3" methods="8" coveredmethods="5"/>
+      <file name="ThemeContext.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/context/ThemeContext.tsx">
+        <metrics statements="19" coveredstatements="16" conditionals="9" coveredconditionals="3" methods="7" coveredmethods="4"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="2" count="22" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="5" count="22" type="stmt"/>
+        <line num="11" count="22" type="stmt"/>
+        <line num="12" count="69" type="stmt"/>
+        <line num="14" count="69" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="69" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="69" type="stmt"/>
+        <line num="21" count="69" type="stmt"/>
+        <line num="23" count="69" type="stmt"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="27" count="69" type="stmt"/>
+        <line num="29" count="69" type="stmt"/>
+        <line num="32" count="69" type="stmt"/>
+        <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="36" count="69" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="69" type="stmt"/>
+      </file>
+      <file name="ThemeContextDefinition.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/context/ThemeContextDefinition.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="10" count="22" type="stmt"/>
+      </file>
+      <file name="useTheme.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/context/useTheme.ts">
+        <metrics statements="7" coveredstatements="6" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="hooks.useCharacterFilters">
+      <metrics statements="26" coveredstatements="26" conditionals="14" coveredconditionals="14" methods="4" coveredmethods="4"/>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/hooks/useCharacterFilters/index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="useCharacterFilters.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/hooks/useCharacterFilters/useCharacterFilters.ts">
+        <metrics statements="25" coveredstatements="25" conditionals="14" coveredconditionals="14" methods="4" coveredmethods="4"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="19" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="12" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="33" count="12" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="43" count="12" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="50" count="12" type="stmt"/>
+      </file>
+    </package>
+    <package name="hooks.useDebouncedCallback">
+      <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/hooks/useDebouncedCallback/index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+      </file>
+      <file name="useDebouncedCallback.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/hooks/useDebouncedCallback/useDebouncedCallback.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="14" count="14" type="stmt"/>
+        <line num="16" count="14" type="stmt"/>
+        <line num="18" count="13" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="9" type="stmt"/>
+        <line num="22" count="13" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.detailsPage">
+      <metrics statements="25" coveredstatements="25" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="5"/>
+      <file name="detailsPage.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/pages/detailsPage/detailsPage.tsx">
+        <metrics statements="19" coveredstatements="19" conditionals="6" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="2" type="cond" truecount="3" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="33" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="4" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="47" count="4" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/pages/detailsPage/styles.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.listingPage">
+      <metrics statements="30" coveredstatements="29" conditionals="11" coveredconditionals="10" methods="9" coveredmethods="8"/>
+      <file name="listingPage.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/pages/listingPage/listingPage.tsx">
+        <metrics statements="24" coveredstatements="23" conditionals="11" coveredconditionals="10" methods="6" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="46" count="5" type="cond" truecount="3" falsecount="0"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="50" count="4" type="stmt"/>
+        <line num="65" count="6" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="95" count="5" type="stmt"/>
+        <line num="98" count="5" type="stmt"/>
+        <line num="101" count="5" type="stmt"/>
+        <line num="102" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="103" count="3" type="stmt"/>
+        <line num="106" count="5" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/pages/listingPage/styles.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="services.api">
+      <metrics statements="14" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="api.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/services/api/api.ts">
+        <metrics statements="14" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="services.api.apiHooks.useCharacter">
+      <metrics statements="11" coveredstatements="11" conditionals="5" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <file name="useCharacter.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/services/api/apiHooks/useCharacter/useCharacter.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="5" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="2" type="cond" truecount="3" falsecount="0"/>
+        <line num="10" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="services.api.apiHooks.useCharacters">
+      <metrics statements="12" coveredstatements="11" conditionals="5" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="index.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/services/api/apiHooks/useCharacters/index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="useCharacters.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/services/api/apiHooks/useCharacters/useCharacters.ts">
+        <metrics statements="11" coveredstatements="10" conditionals="5" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="2" falsecount="1"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="services.mocks">
+      <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="apimocks.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/services/mocks/apimocks.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="characterfactory.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/services/mocks/characterfactory.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+      </file>
+      <file name="charactermocks.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/services/mocks/charactermocks.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+      </file>
+      <file name="fileMock.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/services/mocks/fileMock.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="4" type="stmt"/>
+      </file>
+      <file name="mockhelpers.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/services/mocks/mockhelpers.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="services.testshelper">
+      <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/services/testshelper/index.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="22" type="stmt"/>
+        <line num="4" count="22" type="stmt"/>
+        <line num="5" count="22" type="stmt"/>
+        <line num="8" count="22" type="stmt"/>
+        <line num="21" count="22" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="69" type="stmt"/>
+        <line num="30" count="69" type="cond" truecount="1" falsecount="0"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="38" count="66" type="stmt"/>
+      </file>
+    </package>
+    <package name="styles">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="theme.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/styles/theme.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="36" count="22" type="stmt"/>
+        <line num="58" count="22" type="stmt"/>
+        <line num="80" count="22" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="11" coveredstatements="10" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <file name="errors.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/utils/errors.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+      </file>
+      <file name="sorting.ts" path="/Users/nakador/Code Projects/AI/Tests/homewrok/appSpace/test/src/utils/sorting.ts">
+        <metrics statements="6" coveredstatements="5" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
