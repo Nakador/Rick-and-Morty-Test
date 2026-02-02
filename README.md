@@ -33,6 +33,36 @@ Run the coverage report locally:
 yarn test --coverage
 ```
 
+## Technical Decisions & Approach
+
+### 🧪 Testing Strategy
+Our testing strategy follows the **Testing Trophy** model, ensuring a balance between speed and confidence.
+
+- **[Jest](https://jestjs.io/) & [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)**: The "Wubba Lubba Dub Dub" of our unit and integration testing. We focus on user behavior rather than implementation details.
+- **[Cypress](https://www.cypress.io/)**: Handles the end-to-end "happy paths." It ensures our inter-dimensional travelers can actually find what they're looking for without ending up in the Shrimp Dimension.
+- **[Storybook](https://storybook.js.org/)**: Think of it as the **Citadel of Ricks** for our components. It allows us to view and test components in total isolation, ensuring they work perfectly across all dimensions (screen sizes).
+
+### 🏗 Architecture: Atomic Design
+We follow the **Atomic Design** methodology to build a scalable and maintainable UI library:
+
+- **Atoms**: The smallest building blocks (Buttons, Inputs, Text).
+- **Molecules**: Groups of atoms working together (Autocomplete, StatusBadge).
+- **Organisms**: Complex UI components (FilterBar, CharacterCard).
+- **Templates**: Page-level layouts (MainLayout).
+- **Pages**: Individual routes where data meets design.
+
+### 🎨 Design & Aesthetics
+The UI is inspired by the vibrant and chaotic (yet organized) aesthetic of **Rick and Morty**:
+- **Portal Green (#97ce4c)**: Used for primary actions and success states.
+- **Spaceship Grey**: Foundation for our layout and containers.
+- **Dimension Hopping**: Smooth transitions and micro-animations to keep the experience feeling "alive."
+
+### 🚀 Potential Improvements
+- **Inter-dimensional Caching**: More aggressive React Query caching strategies for frequent travelers.
+- **Dimension-Specific Themes**: Expanding the `ThemeContext` to support a "Dark/Death-Crystal" mode.
+- **Edge Case Coverage**: Implementing more robust Error Boundaries for when the API decides to disintegrate.
+
+
 ## Questions & Answers
 
 ### 1. What are Custom Hooks in React? Propose a practical example where you would create one and explain why it would be useful (skip this if React is not your main known framework).
