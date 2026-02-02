@@ -41,9 +41,12 @@ Our testing strategy follows the **Testing Trophy** model, ensuring a balance be
 - **[Jest](https://jestjs.io/) & [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)**: The "Wubba Lubba Dub Dub" of our unit and integration testing. We focus on user behavior rather than implementation details.
 - **[Cypress](https://www.cypress.io/)**: Handles the end-to-end "happy paths." It ensures our inter-dimensional travelers can actually find what they're looking for without ending up in the Shrimp Dimension.
 - **[Storybook](https://storybook.js.org/)**: Think of it as the **Citadel of Ricks** for our components. It allows us to view and test components in total isolation, ensuring they work perfectly across all dimensions (screen sizes).
+- **[Styled Components](https://styled-components.com/)**: Allows us to keep our styles scoped and maintainable, avoiding CSS conflicts across dimensions. It's like having a dedicated micro-verse for each component's look and feel.
+- **[TanStack Query](https://tanstack.com/query/latest)**: Manages our inter-dimensional data fetching. It handles caching, synchronization, and server state, so we don't have to worry about desynced realities.
+- **[ESLint](https://eslint.org/)**: The "Council of Ricks" for our code quality. It enforces strict rules to ensure every Rick (and Morty) is writing consistent, high-quality code.
 
 ### 🏗 Architecture: Atomic Design
-We follow the **Atomic Design** methodology to build a scalable and maintainable UI library:
+I followed the **Atomic Design** methodology to build a scalable and maintainable UI library:
 
 - **Atoms**: The smallest building blocks (Buttons, Inputs, Text).
 - **Molecules**: Groups of atoms working together (Autocomplete, StatusBadge).
@@ -58,8 +61,7 @@ The UI is inspired by the vibrant and chaotic (yet organized) aesthetic of **Ric
 - **Dimension Hopping**: Smooth transitions and micro-animations to keep the experience feeling "alive."
 
 ### 🚀 Potential Improvements
-- **Inter-dimensional Caching**: More aggressive React Query caching strategies for frequent travelers.
-- **Dimension-Specific Themes**: Expanding the `ThemeContext` to support a "Dark/Death-Crystal" mode.
+- **Inter-dimensional Caching**: More aggressive React Query caching strategies for frequent travelers..
 - **Edge Case Coverage**: Implementing more robust Error Boundaries for when the API decides to disintegrate.
 
 
