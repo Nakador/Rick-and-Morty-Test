@@ -58,11 +58,8 @@ export const ToggleButton = styled(Button)`
   background-color: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.onPrimary};
   border: none;
-  padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
-  border-radius: ${props => props.theme.radii.sm};
   cursor: pointer;
-  white-space: nowrap;
-
+  
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     display: none;
   }

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { CharacterFilter } from '../../services/api/api';
-import { ListingPageView } from './listingPage';
+import { ListingPageView } from './listingPageView';
 import { MemoryRouter } from 'react-router-dom';
 
 import { rickMock, mortyMock } from '../../services/mocks/charactermocks';

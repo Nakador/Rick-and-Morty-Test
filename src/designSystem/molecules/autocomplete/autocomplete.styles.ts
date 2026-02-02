@@ -22,6 +22,10 @@ export const SuggestionsList = styled.ul`
   box-shadow: ${props => props.theme.shadows.md};
   max-height: 200px;
   overflow-y: auto;
+
+  @media (min-width: ${props => props.theme.breakpoints.mobile}) {
+    width: 14rem;
+  }
 `;
 
 export const SuggestionItem = styled.li`
@@ -48,6 +52,7 @@ export const CharacterAvatar = styled(ImageAtom)`
   object-fit: cover;
   margin-right: ${props => props.theme.spacing.md};
   border: 2px solid ${props => props.theme.colors.border};
+  
 `;
 
 export const CharacterInfo = styled.div`
