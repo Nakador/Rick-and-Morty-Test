@@ -25,12 +25,13 @@ export const StyledSelect = styled.select<{ $width?: string }>`
 
   @supports (appearance: base-select) {
     &,
-    &::picker(select) {
+  &::picker(select) {
       appearance: base-select;
+      border-radius: ${props => props.theme.radii.xl};
     }
 
-    &::picker-icon {
- 
+    option {
+      border-radius: ${props => props.theme.radii.xl};
     }
   }
 

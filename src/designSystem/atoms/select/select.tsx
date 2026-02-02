@@ -13,7 +13,7 @@ export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
 }
 
 export const Select: React.FC<SelectProps> = ({ options, id = 'select-id', width, ...props }) =>  (
-    <StyledSelect id={id} {...props} $width={width}>
+  <StyledSelect id={id} data-testid={id} {...props} $width={width}>
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
