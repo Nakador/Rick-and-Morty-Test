@@ -1,6 +1,6 @@
 # React + TypeScript + Vite
 
-[Live Demo](https://test-gold-seven-13.vercel.app/)
+[Live Demo](https://rick-and-morty-test-three.vercel.app/)
 
 AppSpace Rick and Morty Theme test
 
