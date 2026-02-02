@@ -7,7 +7,7 @@ import { isEmpty } from '../../../app/utils/typeGuards/typeGuards';
 export interface AutocompleteOption {
   value: string;
   label: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export interface AutocompleteProps<T extends AutocompleteOption = AutocompleteOption> extends Omit<InputProps, 'onChange' | 'onSelect'> {

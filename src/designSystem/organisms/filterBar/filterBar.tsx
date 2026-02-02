@@ -8,6 +8,12 @@ import { useDebouncedCallback } from '../../../app/hooks/useDebouncedCallback/us
 import { CharacterAvatar, CharacterInfo, CharacterName, CharacterMeta } from '../../molecules/autocomplete/autocomplete.styles';
 import { StatusDot } from '../../molecules/statusBadge/statusBadge.styles';
 
+interface CharacterOption extends AutocompleteOption {
+  image?: string;
+  status?: string;
+  species?: string;
+}
+
 export interface FilterBarProps {
   filter: CharacterFilter;
   onFilterChange: (key: keyof CharacterFilter, value: string) => void;
@@ -54,18 +60,21 @@ export const FilterBar: React.FC<FilterBarProps> = memo(({
           options={autocompleteOptions}
           value={localSearch}
           onChange={handleSearchChange}
-          renderOption={(option: any) => (
-            <>
-              <CharacterAvatar src={option.image} alt={option.label} />
-              <CharacterInfo>
-                <CharacterName>{option.label}</CharacterName>
-                <CharacterMeta>
-                  <StatusDot status={option.status} />
-                  {option.status} • {option.species}
-                </CharacterMeta>
-              </CharacterInfo>
-            </>
-          )}
+          renderOption={(option) => {
+            const charOption = option as CharacterOption;
+            return (
+              <>
+                <CharacterAvatar src={charOption.image} alt={charOption.label} />
+                <CharacterInfo>
+                  <CharacterName>{charOption.label}</CharacterName>
+                  <CharacterMeta>
+                    <StatusDot status={charOption.status || 'unknown'} />
+                    {charOption.status} • {charOption.species}
+                  </CharacterMeta>
+                </CharacterInfo>
+              </>
+            );
+          }}
         />
         <ToggleButton 
           type="button" 
