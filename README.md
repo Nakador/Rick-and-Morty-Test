@@ -48,11 +48,30 @@ Our testing strategy follows the **Testing Trophy** model, ensuring a balance be
 ### 🏗 Architecture: Atomic Design
 I followed the **Atomic Design** methodology to build a scalable and maintainable UI library:
 
-- **Atoms**: The smallest building blocks (Buttons, Inputs, Text).
-- **Molecules**: Groups of atoms working together (Autocomplete, StatusBadge).
-- **Organisms**: Complex UI components (FilterBar, CharacterCard).
-- **Templates**: Page-level layouts (MainLayout).
 - **Pages**: Individual routes where data meets design.
+- **Templates**: Page-level layouts (MainLayout).
+- **Organisms**: Complex UI components (FilterBar, CharacterCard).
+- **Molecules**: Groups of atoms working together (Autocomplete, StatusBadge).
+- **Atoms**: The smallest building blocks (Buttons, Inputs, Text).
+
+### 📁 Folder Structure & Modularization
+The project is strictly separated into two main domains to ensure a clean separation of concerns:
+
+#### 1. `src/designSystem` (The UI Library)
+This is our "Inter-dimensional UI Kit." It contains all presentational components, theme tokens, and global styles. These components are "dumb" and rely strictly on props.
+- Each component is self-contained in its own folder:
+  - `component.tsx`: Logic and structure.
+  - `component.styles.ts`: Styled-components definitions.
+  - `component.stories.tsx`: Storybook documentation.
+  - `component.test.tsx`: Unit and integration tests (Jest/RTL).
+
+#### 2. `src/app` (The Business Logic)
+This is where the "real work" happen. It contains:
+- `hooks/`: Custom React hooks for shared logic.
+- `providers/`: Context providers (Theme, QueryClient).
+- `services/`: API integration and data types.
+- `utils/`: Helper functions and type guards.
+- `pages/`: Container components that fetch data and compose Design System components.
 
 ### 🎨 Design & Aesthetics
 The UI is inspired by the vibrant and chaotic (yet organized) aesthetic of **Rick and Morty**:
