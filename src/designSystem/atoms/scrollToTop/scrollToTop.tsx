@@ -36,7 +36,7 @@ export const ScrollToTop: React.FC<ScrollToTopProps> = ({ id = 'scroll-to-top' }
       $isVisible={isVisible} 
       aria-label="Scroll to top"
     >
-      ↑
+      ^
     </ScrollButton>
   );
 };

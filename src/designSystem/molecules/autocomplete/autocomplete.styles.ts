@@ -16,10 +16,23 @@ export const SuggestionsList = styled.ul`
   list-style: none;
   background-color: ${props => props.theme.colors.background};
   border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.radii.sm};
+  border-radius: ${props => props.theme.radii.xl};
   box-shadow: ${props => props.theme.shadows.md};
   max-height: 200px;
   overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: ${props => props.theme.spacing.sm};
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${props => props.theme.colors.text};
+    border-radius: ${props => props.theme.radii.xl};
+  }
 `;
 
 export const SuggestionItem = styled.li`

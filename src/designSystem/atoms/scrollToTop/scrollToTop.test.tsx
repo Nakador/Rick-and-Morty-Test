@@ -6,7 +6,6 @@ import userEvent from '@testing-library/user-event';
 
 describe('Feature: ScrollToTop Component', () => {
   beforeAll(() => {
-    // Mock window.scrollTo
     Object.defineProperty(window, 'scrollTo', {
       value: jest.fn(),
       writable: true,
@@ -28,7 +27,7 @@ describe('Feature: ScrollToTop Component', () => {
       render(<ScrollToTop />, { wrapper: TestWrapper });
       
       Object.defineProperty(window, 'scrollY', { value: 400, writable: true });
-      fireEvent.scroll(window); // fireEvent is still appropriate for window events like scroll
+      fireEvent.scroll(window);
 
       const button = screen.getByTestId('scroll-to-top');
       expect(button).toBeVisible();
@@ -42,9 +41,6 @@ describe('Feature: ScrollToTop Component', () => {
       render(<ScrollToTop />, { wrapper: TestWrapper });
       
       const button = screen.getByTestId('scroll-to-top');
-      // Ensure button is visible/interactable before clicking
-      // In JSDOM, if opacity is 0 or display none it might throw.
-      // Assuming CSS handles visibility or conditional rendering.
       
       await user.click(button);
 
