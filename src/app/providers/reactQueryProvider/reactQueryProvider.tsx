@@ -5,7 +5,7 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
-      staleTime: 30000 ,
+      staleTime: 30000,
     },
   },
 });
@@ -15,8 +15,5 @@ interface ReactQueryProviderProps {
 }
 
 export const ReactQueryProvider: React.FC<ReactQueryProviderProps> = ({ children }) => (
-    <QueryClientProvider client={queryClient}>
-      {children}
-    </QueryClientProvider>
+  <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
 );
-

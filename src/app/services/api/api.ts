@@ -5,13 +5,11 @@ export type { Character, CharacterFilter, CharactersResponse };
 
 const BASE_URL = 'https://rickandmortyapi.com/api';
 
-
-
-
-
 export const getCharacters = async <T = Record<string, string | number | boolean>>(
   params?: T
-): Promise<ApiResponse<Info<Character[]>> | { data: null; status: number; statusMessage: string }> => {
+): Promise<
+  ApiResponse<Info<Character[]>> | { data: null; status: number; statusMessage: string }
+> => {
   try {
     const response = await axios.get(`${BASE_URL}/character`, { params });
     return {
@@ -28,7 +26,6 @@ export const getCharacters = async <T = Record<string, string | number | boolean
     };
   }
 };
-
 
 export const getCharacter = async (
   id: number

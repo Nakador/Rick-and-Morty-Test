@@ -30,11 +30,11 @@ export const ScrollToTop: React.FC<ScrollToTopProps> = ({ id = 'scroll-to-top' }
   };
 
   return (
-    <ScrollButton 
-      id={id} 
+    <ScrollButton
+      id={id}
       data-testid={id}
-      onClick={scrolltotop} 
-      $isVisible={isVisible} 
+      onClick={scrolltotop}
+      $isVisible={isVisible}
       aria-label="Scroll to top"
     >
       ↑

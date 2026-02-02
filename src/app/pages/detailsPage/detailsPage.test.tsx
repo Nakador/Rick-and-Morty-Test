@@ -20,13 +20,15 @@ describe('Feature: DetailsPage', () => {
 
   describe('Scenario: Loading state', () => {
     test('Given a character ID, When the page is loading, Then it should show the backdrop visualizer', () => {
-      (useCharacterHook.useCharacter as jest.Mock).mockReturnValue(createMockQueryResult<Character>({
-        isLoading: true,
-        data: undefined,
-        error: null,
-        status: 'pending',
-        fetchStatus: 'fetching',
-      }));
+      (useCharacterHook.useCharacter as jest.Mock).mockReturnValue(
+        createMockQueryResult<Character>({
+          isLoading: true,
+          data: undefined,
+          error: null,
+          status: 'pending',
+          fetchStatus: 'fetching',
+        })
+      );
 
       render(<DetailsPage />, { wrapper: TestWrapper });
 
@@ -36,18 +38,19 @@ describe('Feature: DetailsPage', () => {
 
   describe('Scenario: Success state', () => {
     test('Given a valid character ID, When the data is fetched, Then it should display the character details card', () => {
-      (useCharacterHook.useCharacter as jest.Mock).mockReturnValue(createMockQueryResult<Character>({
-        isLoading: false,
-        data: rickMock,
-        error: null,
-        status: 'success',
-      }));
+      (useCharacterHook.useCharacter as jest.Mock).mockReturnValue(
+        createMockQueryResult<Character>({
+          isLoading: false,
+          data: rickMock,
+          error: null,
+          status: 'success',
+        })
+      );
 
       render(<DetailsPage />, { wrapper: TestWrapper });
 
       expect(screen.getByText('Rick Sanchez')).toBeInTheDocument();
       expect(screen.getByText('← Back to Listing')).toBeInTheDocument();
-      
 
       // But verify 'Rick Sanchez' is likely a heading, so we could check that too
       // expect(screen.getByRole('heading', { level: 1, name: 'Rick Sanchez' })).toBeInTheDocument();
@@ -58,13 +61,15 @@ describe('Feature: DetailsPage', () => {
 
   describe('Scenario: Error state - 404', () => {
     test('Given an invalid character ID, When the fetch returns a 404, Then it should show character not found message', () => {
-      (useCharacterHook.useCharacter as jest.Mock).mockReturnValue(createMockQueryResult<Character>({
-        isLoading: false,
-        data: undefined,
-        error: new ApiError('Not Found', 404),
-        isError: true,
-        status: 'error',
-      }));
+      (useCharacterHook.useCharacter as jest.Mock).mockReturnValue(
+        createMockQueryResult<Character>({
+          isLoading: false,
+          data: undefined,
+          error: new ApiError('Not Found', 404),
+          isError: true,
+          status: 'error',
+        })
+      );
 
       render(<DetailsPage />, { wrapper: TestWrapper });
 
@@ -74,13 +79,15 @@ describe('Feature: DetailsPage', () => {
 
   describe('Scenario: Error state - Generic', () => {
     test('Given a network error, When communication fails, Then it should show the error message', () => {
-      (useCharacterHook.useCharacter as jest.Mock).mockReturnValue(createMockQueryResult<Character>({
-        isLoading: false,
-        data: undefined,
-        error: new Error('Network error'),
-        isError: true,
-        status: 'error',
-      }));
+      (useCharacterHook.useCharacter as jest.Mock).mockReturnValue(
+        createMockQueryResult<Character>({
+          isLoading: false,
+          data: undefined,
+          error: new Error('Network error'),
+          isError: true,
+          status: 'error',
+        })
+      );
 
       render(<DetailsPage />, { wrapper: TestWrapper });
 

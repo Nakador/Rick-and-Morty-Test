@@ -8,7 +8,6 @@ import { mockCharactersResponse } from '../../services/mocks/apimocks';
 import { ApiError } from '../../utils/error/errors';
 import userEvent from '@testing-library/user-event';
 
-
 jest.mock('../../services/api/apiHooks/useCharacters/useCharacters');
 jest.mock('../../hooks/useCharacterFilters/useCharacterFilters');
 
@@ -57,7 +56,7 @@ describe('Feature: ListingPage', () => {
   });
 
   test('Scenario: Error state - Given an API error, When the page loads, Then it should display the error page', () => {
-     jest.spyOn(useCharacterFiltersHook, 'useCharacterFilters').mockReturnValue(mockFilters);
+    jest.spyOn(useCharacterFiltersHook, 'useCharacterFilters').mockReturnValue(mockFilters);
     const mockError = new ApiError('Failed to fetch characters', 500);
     (useCharactersHook.useCharacters as jest.Mock).mockReturnValue({
       isLoading: false,
@@ -78,13 +77,13 @@ describe('Feature: ListingPage', () => {
       isError: false,
       data: {
         ...mockCharactersResponse,
-        info: { ...mockCharactersResponse.info, next: 'url', pages: 2 }
+        info: { ...mockCharactersResponse.info, next: 'url', pages: 2 },
       },
       error: null,
     });
 
     render(<ListingPage />, { wrapper: TestWrapper });
-    
+
     const nextButton = screen.getByRole('button', { name: /next/i });
     await user.click(nextButton);
 
@@ -106,14 +105,13 @@ describe('Feature: ListingPage', () => {
 
     const input = screen.getByRole('textbox', { name: /search by name/i });
     await user.type(input, 'Rick');
-    
 
     act(() => {
       jest.advanceTimersByTime(500);
     });
 
     expect(mockFilters.setFilter).toHaveBeenCalledWith('name', 'Rick');
-    
+
     jest.useRealTimers();
   });
 });

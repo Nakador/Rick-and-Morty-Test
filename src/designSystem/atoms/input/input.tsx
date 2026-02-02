@@ -3,4 +3,6 @@ import { StyledInput } from './input.styles';
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
-export const Input: React.FC<InputProps> = ({ id='input-id', ...props }) => <StyledInput id={id} data-testid={id} {...props} />;
+export const Input: React.FC<InputProps> = ({ id = 'input-id', ...props }) => (
+  <StyledInput id={id} data-testid={id} {...props} />
+);

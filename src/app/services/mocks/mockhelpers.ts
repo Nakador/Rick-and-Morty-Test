@@ -1,6 +1,5 @@
 import type { UseQueryResult } from '@tanstack/react-query';
 
-
 export const createMockQueryResult = <TData, TError = Error>(
   overrides: Partial<UseQueryResult<TData, TError>> = {}
 ): UseQueryResult<TData, TError> => {

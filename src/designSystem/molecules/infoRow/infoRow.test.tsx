@@ -9,7 +9,9 @@ describe('Feature: InfoRow Component', () => {
       const label = 'Species';
       const value = 'Human';
 
-      const { container } = render(<InfoRow label={label} value={value} />, { wrapper: TestWrapper });
+      const { container } = render(<InfoRow label={label} value={value} />, {
+        wrapper: TestWrapper,
+      });
 
       expect(container).toBeInTheDocument();
       expect(screen.getByText(label)).toBeInTheDocument();
@@ -33,10 +35,7 @@ describe('Feature: InfoRow Component', () => {
       const label = 'Gender';
       const value = 'Male';
 
-      render(
-        <InfoRow id={customId} label={label} value={value} />,
-        { wrapper: TestWrapper }
-      );
+      render(<InfoRow id={customId} label={label} value={value} />, { wrapper: TestWrapper });
 
       const element = screen.getByTestId(customId);
       expect(element).toBeInTheDocument();

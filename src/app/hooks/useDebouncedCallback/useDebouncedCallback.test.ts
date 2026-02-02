@@ -15,9 +15,8 @@ describe('Feature: useDebouncedCallback Hook', () => {
     test('Given a callback and delay, When triggered multiple times within delay, Then it only executes once', () => {
       const callback = jest.fn();
       const delay = 500;
-      
-      const { result } = renderHook(() => useDebouncedCallback(callback, delay));
 
+      const { result } = renderHook(() => useDebouncedCallback(callback, delay));
 
       act(() => {
         result.current('first');
@@ -26,7 +25,6 @@ describe('Feature: useDebouncedCallback Hook', () => {
       });
 
       expect(callback).not.toHaveBeenCalled();
-
 
       act(() => {
         jest.advanceTimersByTime(delay);
@@ -39,25 +37,23 @@ describe('Feature: useDebouncedCallback Hook', () => {
     test('Given a callback and delay, When triggered after prejestous delay finishes, Then it executes again', () => {
       const callback = jest.fn();
       const delay = 500;
-      
-      const { result } = renderHook(() => useDebouncedCallback(callback, delay));
 
+      const { result } = renderHook(() => useDebouncedCallback(callback, delay));
 
       act(() => {
         result.current('A');
       });
-      
+
       act(() => {
         jest.advanceTimersByTime(delay);
       });
 
       expect(callback).toHaveBeenCalledWith('A');
 
-
       act(() => {
         result.current('B');
       });
-      
+
       act(() => {
         jest.advanceTimersByTime(delay);
       });

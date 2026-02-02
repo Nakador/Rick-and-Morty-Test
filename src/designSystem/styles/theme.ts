@@ -48,7 +48,7 @@ const sharedTheme = {
 };
 
 export const darkTheme: DefaultTheme = {
-  ...sharedTheme, 
+  ...sharedTheme,
   colors: {
     primary: '#97ce4c',
     secondary: '#e89ac7',

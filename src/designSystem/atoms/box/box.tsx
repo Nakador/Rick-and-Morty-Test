@@ -8,21 +8,15 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const Box: React.FC<BoxProps> = ({ 
-  padding, 
-  margin, 
-  id = 'box-component', 
-  children, 
-  ...props 
+export const Box: React.FC<BoxProps> = ({
+  padding,
+  margin,
+  id = 'box-component',
+  children,
+  ...props
 }) => {
   return (
-    <StyledBox
-      $padding={padding}
-      $margin={margin}
-      id={id}
-      data-testid={id}
-      {...props}
-    >
+    <StyledBox $padding={padding} $margin={margin} id={id} data-testid={id} {...props}>
       {children}
     </StyledBox>
   );

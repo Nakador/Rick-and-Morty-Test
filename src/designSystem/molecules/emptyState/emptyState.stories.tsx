@@ -1,4 +1,3 @@
-
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { EmptyState } from './emptyState';
 
@@ -21,21 +20,21 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    message: "There is nothing here",
+    message: 'There is nothing here',
   },
 };
 
 export const WithAction: Story = {
   args: {
-    message: "There is nothing here. Maybe try cleaning the filters?",
-    actionLabel: "Clean filters",
+    message: 'There is nothing here. Maybe try cleaning the filters?',
+    actionLabel: 'Clean filters',
     onAction: () => alert('Action clicked!'),
   },
 };
 
 export const CustomImage: Story = {
   args: {
-    message: "No results found",
-    imageSrc: "https://via.placeholder.com/150",
+    message: 'No results found',
+    imageSrc: 'https://via.placeholder.com/150',
   },
 };

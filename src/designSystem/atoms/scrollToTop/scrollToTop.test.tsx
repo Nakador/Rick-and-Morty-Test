@@ -25,7 +25,7 @@ describe('Feature: ScrollToTop Component', () => {
   describe('Scenario: Scrolling Behavior', () => {
     test('Given the page is scrolled down, When the scroll threshold is exceeded, Then the button should become visible', () => {
       render(<ScrollToTop />, { wrapper: TestWrapper });
-      
+
       Object.defineProperty(window, 'scrollY', { value: 400, writable: true });
       fireEvent.scroll(window);
 
@@ -39,9 +39,9 @@ describe('Feature: ScrollToTop Component', () => {
       const user = userEvent.setup();
       Object.defineProperty(window, 'scrollY', { value: 400, writable: true });
       render(<ScrollToTop />, { wrapper: TestWrapper });
-      
+
       const button = screen.getByTestId('scroll-to-top');
-      
+
       await user.click(button);
 
       expect(window.scrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'smooth' });

@@ -18,7 +18,7 @@ const meta = {
   args: {
     onNext: () => {},
     onPrev: () => {},
-  }
+  },
 } satisfies Meta<typeof Pagination>;
 
 export default meta;

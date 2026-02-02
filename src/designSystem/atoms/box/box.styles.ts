@@ -6,6 +6,6 @@ export interface StyledBoxProps {
 }
 
 export const StyledBox = styled.div<StyledBoxProps>`
-  padding: ${props => props.$padding || '0'};
-  margin: ${props => props.$margin || '0'};
+  padding: ${(props) => props.$padding || '0'};
+  margin: ${(props) => props.$margin || '0'};
 `;

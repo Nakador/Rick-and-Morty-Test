@@ -1,4 +1,3 @@
-
 import { ApiError } from './errors';
 
 describe('Feature: ApiError Class', () => {

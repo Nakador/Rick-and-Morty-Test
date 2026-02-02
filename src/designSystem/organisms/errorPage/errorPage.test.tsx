@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event';
 describe('Feature: ErrorPage Organism', () => {
   describe('Scenario: Rendering error info', () => {
     test('Given an error message, When the page is rendered, Then it should display the message', () => {
-      const message = "Dimension conflict detected";
+      const message = 'Dimension conflict detected';
       render(<ErrorPage message={message} />, { wrapper: TestWrapper });
 
       expect(screen.getByText(message)).toBeInTheDocument();

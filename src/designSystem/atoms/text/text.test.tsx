@@ -43,13 +43,18 @@ describe('Feature: Text Component', () => {
     test('Given the ellipsis prop, When the Text component is rendered, Then it should apply the ellipsis CSS styles', () => {
       const id = 'ellipsis-text';
 
-      render(<Text ellipsis id={id}>Long Text</Text>, { wrapper: TestWrapper });
+      render(
+        <Text ellipsis id={id}>
+          Long Text
+        </Text>,
+        { wrapper: TestWrapper }
+      );
 
       const element = screen.getByTestId(id);
       expect(element).toHaveStyle({
         'text-overflow': 'ellipsis',
         'white-space': 'nowrap',
-        'overflow': 'hidden',
+        overflow: 'hidden',
       });
     });
   });

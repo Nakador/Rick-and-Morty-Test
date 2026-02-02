@@ -9,14 +9,17 @@ import { ApiError } from '../../utils/error/errors';
 import { BackLink } from './detailsPage.styles';
 import { isNil } from '../../utils/typeGuards/typeGuards';
 
-
 interface DetailsPageViewProps {
   character?: Character;
   isLoading: boolean;
   error?: Error | null;
 }
 
-export const DetailsPageView: React.FC<DetailsPageViewProps> = ({ character, isLoading, error }) => {
+export const DetailsPageView: React.FC<DetailsPageViewProps> = ({
+  character,
+  isLoading,
+  error,
+}) => {
   if (isLoading) return <Backdrop />;
 
   if (error) {

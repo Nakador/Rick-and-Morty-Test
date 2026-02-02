@@ -8,13 +8,15 @@ module.exports = {
     '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/src/services/mocks/fileMock.ts',
   },
   transform: {
-    '^.+\\.(ts|tsx)$': ['ts-jest', {
-      tsconfig: 'tsconfig.test.json',
-      compiler: 'typescript',
-      diagnostics: {
-        ignoreCodes: [1343]
+    '^.+\\.(ts|tsx)$': [
+      'ts-jest',
+      {
+        tsconfig: 'tsconfig.test.json',
+        compiler: 'typescript',
+        diagnostics: {
+          ignoreCodes: [1343],
+        },
       },
-
-    }],
+    ],
   },
 };

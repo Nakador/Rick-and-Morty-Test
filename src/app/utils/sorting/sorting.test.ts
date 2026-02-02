@@ -1,4 +1,3 @@
-
 import { sortCharacters } from './sorting';
 import type { Character } from '../../services/api/api';
 
@@ -12,14 +11,14 @@ describe('Feature: Character Sorting', () => {
   describe('Scenario: Ascending Sort', () => {
     test('Given a list of characters, When sorted "asc", Then they should be ordered A-Z by name', () => {
       const sorted = sortCharacters(characters, 'asc');
-      expect(sorted.map(c => c.name)).toEqual(['Beth', 'Morty', 'Rick']);
+      expect(sorted.map((c) => c.name)).toEqual(['Beth', 'Morty', 'Rick']);
     });
   });
 
   describe('Scenario: Descending Sort', () => {
     test('Given a list of characters, When sorted "desc", Then they should be ordered Z-A by name', () => {
       const sorted = sortCharacters(characters, 'desc');
-      expect(sorted.map(c => c.name)).toEqual(['Rick', 'Morty', 'Beth']);
+      expect(sorted.map((c) => c.name)).toEqual(['Rick', 'Morty', 'Beth']);
     });
   });
 

@@ -9,7 +9,9 @@ describe('Feature: StatusBadge Component', () => {
       const status = 'Alive';
       const species = 'Human';
 
-      const { container } = render(<StatusBadge status={status} species={species} />, { wrapper: TestWrapper });
+      const { container } = render(<StatusBadge status={status} species={species} />, {
+        wrapper: TestWrapper,
+      });
 
       expect(container).toBeInTheDocument();
       expect(screen.getByText(`${status} - ${species}`)).toBeInTheDocument();
@@ -22,7 +24,9 @@ describe('Feature: StatusBadge Component', () => {
       const status = 'Dead';
       const species = 'Alien';
 
-      render(<StatusBadge id={customId} status={status} species={species} />, { wrapper: TestWrapper });
+      render(<StatusBadge id={customId} status={status} species={species} />, {
+        wrapper: TestWrapper,
+      });
 
       const element = screen.getByTestId(customId);
       expect(element).toBeInTheDocument();

@@ -8,11 +8,11 @@ export interface StatusBadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   species: string;
 }
 
-export const StatusBadge: React.FC<StatusBadgeProps> = ({ 
-  status, 
-  species, 
+export const StatusBadge: React.FC<StatusBadgeProps> = ({
+  status,
+  species,
   id = 'status-badge',
-  ...props 
+  ...props
 }) => {
   return (
     <Flex align="center" gap="0.5rem" id={id} data-testid={id} {...props}>

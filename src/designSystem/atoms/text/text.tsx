@@ -1,6 +1,12 @@
 import React from 'react';
 import { StyledText } from './text.styles';
-import { type TextVariant, type TextSize, type TextWeight, type TextAlign, type TextColor } from './text.styles';
+import {
+  type TextVariant,
+  type TextSize,
+  type TextWeight,
+  type TextAlign,
+  type TextColor,
+} from './text.styles';
 
 export interface TextProps extends React.HTMLAttributes<HTMLElement> {
   as?: TextVariant;
@@ -13,16 +19,16 @@ export interface TextProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
 }
 
-export const Text: React.FC<TextProps> = ({ 
-  as = 'p', 
-  size, 
-  weight, 
-  align, 
+export const Text: React.FC<TextProps> = ({
+  as = 'p',
+  size,
+  weight,
+  align,
   color,
-  ellipsis, 
-  id = 'text-id', 
-  children, 
-  ...props 
+  ellipsis,
+  id = 'text-id',
+  children,
+  ...props
 }) => {
   return (
     <StyledText

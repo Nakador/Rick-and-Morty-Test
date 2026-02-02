@@ -22,17 +22,14 @@ describe('Feature: Flex Component', () => {
       const justify = 'space-between';
       const id = 'styled-flex';
 
-      render(
-        <Flex gap={gap} align={align} justify={justify} id={id} />,
-        { wrapper: TestWrapper }
-      );
+      render(<Flex gap={gap} align={align} justify={justify} id={id} />, { wrapper: TestWrapper });
 
       const element = screen.getByTestId(id);
       expect(element).toHaveStyle({
         display: 'flex',
         gap,
         'align-items': align,
-        'justify-content': justify
+        'justify-content': justify,
       });
     });
   });

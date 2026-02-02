@@ -11,15 +11,15 @@ export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const Flex: React.FC<FlexProps> = ({ 
-  gap, 
-  align, 
-  justify, 
-  wrap, 
+export const Flex: React.FC<FlexProps> = ({
+  gap,
+  align,
+  justify,
+  wrap,
   direction,
-  id = 'flex-component', 
-  children, 
-  ...props 
+  id = 'flex-component',
+  children,
+  ...props
 }) => {
   return (
     <StyledFlex

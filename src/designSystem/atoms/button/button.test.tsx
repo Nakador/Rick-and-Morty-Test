@@ -37,10 +37,7 @@ describe('Feature: Button Component', () => {
   describe('Scenario: Interaction', () => {
     test('Given an onClick handler, When the Button is clicked, Then the handler should be called', async () => {
       const handleClick = jest.fn();
-      render(
-        <Button onClick={handleClick}>Click Me</Button>,
-        { wrapper: TestWrapper }
-      );
+      render(<Button onClick={handleClick}>Click Me</Button>, { wrapper: TestWrapper });
 
       const button = screen.getByRole('button', { name: /click me/i });
       await userEvent.click(button);

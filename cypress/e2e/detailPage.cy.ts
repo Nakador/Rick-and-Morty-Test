@@ -20,9 +20,7 @@ describe('Details Page Story', () => {
   it('should handle back button navigation', () => {
     cy.visit(`${baseUrl}?id=pages-detailspage--success&viewMode=story`);
 
-    cy.contains('← Back to Listing')
-      .should('be.visible')
-      .should('have.attr', 'href', '/');
+    cy.contains('← Back to Listing').should('be.visible').should('have.attr', 'href', '/');
   });
 
   context('Mobile View', () => {
@@ -32,7 +30,7 @@ describe('Details Page Story', () => {
 
     it('should display correctly on mobile', () => {
       cy.visit(`${baseUrl}?id=pages-detailspage--success&viewMode=story`);
-      
+
       cy.contains('Rick Sanchez').should('be.visible');
       cy.get('img').should('be.visible');
       cy.contains('← Back to Listing').should('be.visible');

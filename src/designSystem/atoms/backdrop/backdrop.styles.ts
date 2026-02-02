@@ -14,10 +14,10 @@ const float = keyframes`
 `;
 
 export const RickHead = styled(ImageAtom)`
-  width: 120px; 
+  width: 120px;
   height: 120px;
   animation: ${float} 2s ease-in-out infinite;
-  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
 `;
 
 export const Overlay = styled.div`
@@ -32,7 +32,7 @@ export const Overlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: ${props => props.theme.zIndices.tooltip};
+  z-index: ${(props) => props.theme.zIndices.tooltip};
   backdrop-filter: blur(4px);
 `;
 
@@ -40,5 +40,5 @@ export const LoaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: ${props => props.theme.spacing.md};
+  gap: ${(props) => props.theme.spacing.md};
 `;

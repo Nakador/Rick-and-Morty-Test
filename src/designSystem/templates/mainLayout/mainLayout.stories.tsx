@@ -23,10 +23,6 @@ const StoryContent = styled.div`
 export const Default: Story = {
   args: {
     title: 'The Rick and Morty App',
-    children: (
-      <StoryContent>
-        Page Content Goes Here
-      </StoryContent>
-    ),
+    children: <StoryContent>Page Content Goes Here</StoryContent>,
   },
 };

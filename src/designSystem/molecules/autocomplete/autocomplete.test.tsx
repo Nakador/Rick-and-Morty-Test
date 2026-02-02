@@ -12,28 +12,23 @@ const mockOptions = [
 describe('Autocomplete', () => {
   it('renders input field correctly', () => {
     render(
-      <Autocomplete 
-        value="" 
-        onChange={() => {}} 
-        options={mockOptions} 
-        placeholder="Test placeholder" 
+      <Autocomplete
+        value=""
+        onChange={() => {}}
+        options={mockOptions}
+        placeholder="Test placeholder"
       />,
       { wrapper: TestWrapper }
     );
-    
+
     expect(screen.getByPlaceholderText('Test placeholder')).toBeInTheDocument();
   });
 
   it('displays suggestions when typing matches options', () => {
     const handleChange = jest.fn();
-    render(
-      <Autocomplete 
-        value="Ap" 
-        onChange={handleChange} 
-        options={mockOptions} 
-      />,
-      { wrapper: TestWrapper }
-    );
+    render(<Autocomplete value="Ap" onChange={handleChange} options={mockOptions} />, {
+      wrapper: TestWrapper,
+    });
 
     const input = screen.getByRole('textbox');
     fireEvent.focus(input);
@@ -46,14 +41,9 @@ describe('Autocomplete', () => {
 
   it('calls onChange when input value changes', () => {
     const handleChange = jest.fn();
-    render(
-      <Autocomplete 
-        value="" 
-        onChange={handleChange} 
-        options={mockOptions} 
-      />,
-      { wrapper: TestWrapper }
-    );
+    render(<Autocomplete value="" onChange={handleChange} options={mockOptions} />, {
+      wrapper: TestWrapper,
+    });
 
     const input = screen.getByRole('textbox');
     fireEvent.change(input, { target: { value: 'a' } });
@@ -65,11 +55,11 @@ describe('Autocomplete', () => {
     const handleSelect = jest.fn();
     const handleChange = jest.fn();
     render(
-      <Autocomplete 
-        value="Ap" 
-        onChange={handleChange} 
+      <Autocomplete
+        value="Ap"
+        onChange={handleChange}
         onSelect={handleSelect}
-        options={mockOptions} 
+        options={mockOptions}
       />,
       { wrapper: TestWrapper }
     );
@@ -86,14 +76,9 @@ describe('Autocomplete', () => {
   });
 
   it('does not show suggestions if no match found', () => {
-    render(
-      <Autocomplete 
-        value="Zzz" 
-        onChange={() => {}} 
-        options={mockOptions} 
-      />,
-      { wrapper: TestWrapper }
-    );
+    render(<Autocomplete value="Zzz" onChange={() => {}} options={mockOptions} />, {
+      wrapper: TestWrapper,
+    });
 
     const input = screen.getByRole('textbox');
     fireEvent.focus(input);

@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-
-
 export const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -11,8 +9,8 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.text};
+    background-color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.text};
     line-height: 1.5;
   }
 
@@ -28,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
 
   /* Global Scrollbar Styles */
   *::-webkit-scrollbar {
-    width: ${props => props.theme.spacing.sm};
+    width: ${(props) => props.theme.spacing.sm};
   }
 
   *::-webkit-scrollbar-track {
@@ -36,7 +34,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: ${props => props.theme.colors.text};
-    border-radius: ${props => props.theme.radii.xl};
+    background-color: ${(props) => props.theme.colors.text};
+    border-radius: ${(props) => props.theme.radii.xl};
   }
 `;

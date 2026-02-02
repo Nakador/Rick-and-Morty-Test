@@ -11,13 +11,13 @@ describe('Feature: Pagination Component', () => {
       const totalPages = 5;
 
       render(
-        <Pagination 
-          currentPage={currentPage} 
-          totalPages={totalPages} 
-          onNext={jest.fn()} 
-          onPrev={jest.fn()} 
-          hasNext={true} 
-          hasPrev={false} 
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onNext={jest.fn()}
+          onPrev={jest.fn()}
+          hasNext={true}
+          hasPrev={false}
         />,
         { wrapper: TestWrapper }
       );
@@ -27,13 +27,13 @@ describe('Feature: Pagination Component', () => {
 
     test('Given first page, When rendered, Then "Previous" button should be disabled', () => {
       render(
-        <Pagination 
-          currentPage={1} 
-          totalPages={5} 
-          onNext={jest.fn()} 
-          onPrev={jest.fn()} 
-          hasNext={true} 
-          hasPrev={false} 
+        <Pagination
+          currentPage={1}
+          totalPages={5}
+          onNext={jest.fn()}
+          onPrev={jest.fn()}
+          hasNext={true}
+          hasPrev={false}
         />,
         { wrapper: TestWrapper }
       );
@@ -48,13 +48,13 @@ describe('Feature: Pagination Component', () => {
       const user = userEvent.setup();
       const onNext = jest.fn();
       render(
-        <Pagination 
-          currentPage={1} 
-          totalPages={5} 
-          onNext={onNext} 
-          onPrev={jest.fn()} 
-          hasNext={true} 
-          hasPrev={false} 
+        <Pagination
+          currentPage={1}
+          totalPages={5}
+          onNext={onNext}
+          onPrev={jest.fn()}
+          hasNext={true}
+          hasPrev={false}
         />,
         { wrapper: TestWrapper }
       );
@@ -70,14 +70,14 @@ describe('Feature: Pagination Component', () => {
     test('Given a custom id, When the component is rendered, Then it should have the correct id and test-id', () => {
       const customId = 'my-pagination';
       render(
-        <Pagination 
+        <Pagination
           id={customId}
-          currentPage={1} 
-          totalPages={5} 
-          onNext={jest.fn()} 
-          onPrev={jest.fn()} 
-          hasNext={true} 
-          hasPrev={false} 
+          currentPage={1}
+          totalPages={5}
+          onNext={jest.fn()}
+          onPrev={jest.fn()}
+          hasNext={true}
+          hasPrev={false}
         />,
         { wrapper: TestWrapper }
       );

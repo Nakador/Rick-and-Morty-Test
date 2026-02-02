@@ -8,16 +8,14 @@ interface UseCharactersParams extends CharacterFilter {
 }
 
 const fetchCharacters = async (params: UseCharactersParams): Promise<CharactersResponse> => {
-
   const response = await getCharacters(params);
-  
+
   if (response.status !== 200 || !response.data) {
-     throw new ApiError(response.statusMessage || 'Failed to fetch characters', response.status);
+    throw new ApiError(response.statusMessage || 'Failed to fetch characters', response.status);
   }
 
   return response.data as CharactersResponse;
 };
-
 
 export const useCharacters = (params: UseCharactersParams) => {
   return useQuery<CharactersResponse>({

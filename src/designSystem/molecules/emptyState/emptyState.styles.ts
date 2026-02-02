@@ -8,31 +8,31 @@ export const Container = styled.div`
   justify-content: center;
   min-height: 50vh;
   text-align: center;
-  gap: ${props => props.theme.spacing.md};
+  gap: ${(props) => props.theme.spacing.md};
 `;
 
 export const StyledImage = styled(ImageAtom)`
   max-width: 300px;
   height: auto;
-  margin-bottom: ${props => props.theme.spacing.md};
+  margin-bottom: ${(props) => props.theme.spacing.md};
 `;
 
 export const Message = styled.p`
-  font-size: ${props => props.theme.fontSizes.lg};
-  color: ${props => props.theme.colors.text};
+  font-size: ${(props) => props.theme.fontSizes.lg};
+  color: ${(props) => props.theme.colors.text};
   width: 40rem;
 `;
 
 export const ActionButton = styled.button`
   background: none;
   border: none;
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
   text-decoration: underline;
   cursor: pointer;
-  font-size: ${props => props.theme.fontSizes.lg};
+  font-size: ${(props) => props.theme.fontSizes.lg};
   padding: 0;
-  
+
   &:hover {
-    color: ${props => props.theme.colors.accent};
+    color: ${(props) => props.theme.colors.accent};
   }
 `;

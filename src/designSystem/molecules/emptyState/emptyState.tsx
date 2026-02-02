@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Container, StyledImage, Message, ActionButton } from './emptyState.styles';
 
@@ -9,13 +8,13 @@ export interface EmptyStateProps {
   onAction?: () => void;
 }
 
-const defaultAsset = "/assets/rick-morty-empty-state.png";
+const defaultAsset = '/assets/rick-morty-empty-state.png';
 
-export const EmptyState: React.FC<EmptyStateProps> = ({ 
-  imageSrc = defaultAsset, 
-  message, 
-  actionLabel, 
-  onAction 
+export const EmptyState: React.FC<EmptyStateProps> = ({
+  imageSrc = defaultAsset,
+  message,
+  actionLabel,
+  onAction,
 }) => {
   return (
     <Container>

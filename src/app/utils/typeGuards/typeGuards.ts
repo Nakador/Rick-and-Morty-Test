@@ -24,4 +24,3 @@ export const isEmpty = (value: unknown): boolean => {
   }
   return false;
 };
-

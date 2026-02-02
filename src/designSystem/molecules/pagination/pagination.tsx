@@ -12,12 +12,12 @@ export interface PaginationProps extends React.HTMLAttributes<HTMLDivElement> {
   hasPrev: boolean;
 }
 
-export const Pagination: React.FC<PaginationProps> = ({ 
-  currentPage, 
-  totalPages, 
-  onNext, 
-  onPrev, 
-  hasNext, 
+export const Pagination: React.FC<PaginationProps> = ({
+  currentPage,
+  totalPages,
+  onNext,
+  onPrev,
+  hasNext,
   hasPrev,
   id = 'pagination',
   ...props

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Overlay, LoaderContainer, RickHead } from './backdrop.styles';
-const rickAsset = "/assets/rick-svgrepo-com.svg";
+const rickAsset = '/assets/rick-svgrepo-com.svg';
 
 type BackdropProps = React.HTMLAttributes<HTMLDivElement>;
 

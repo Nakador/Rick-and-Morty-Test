@@ -4,8 +4,6 @@ import { CharacterDetailsCard } from './characterDetailsCard';
 import { TestWrapper } from '../../../app/services/testshelper/TestWrapper';
 import { rickMock } from '../../../app/services/mocks/charactermocks';
 
-
-
 describe('Feature: CharacterDetailsCard Organism', () => {
   describe('Scenario: Rendering detailed info', () => {
     test('Given a character, When details card is rendered, Then all info rows should be visible', () => {
@@ -24,7 +22,9 @@ describe('Feature: CharacterDetailsCard Organism', () => {
 
   describe('Scenario: Identification', () => {
     test('Given a custom id, When rendered, Then it should have the correct id attribute', () => {
-      render(<CharacterDetailsCard character={rickMock} id="details-view" />, { wrapper: TestWrapper });
+      render(<CharacterDetailsCard character={rickMock} id="details-view" />, {
+        wrapper: TestWrapper,
+      });
 
       const element = screen.getByTestId('details-view');
       expect(element).toBeInTheDocument();

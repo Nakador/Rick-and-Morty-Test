@@ -14,13 +14,13 @@ describe('Feature: FilterBar Organism', () => {
       jest.useFakeTimers();
       const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
       const onFilterChange = jest.fn();
-      
+
       render(
-        <FilterBar 
-          filter={{ name: '', status: '', gender: '' }} 
+        <FilterBar
+          filter={{ name: '', status: '', gender: '' }}
           onFilterChange={onFilterChange}
-          sort="" 
-          onSortChange={jest.fn()} 
+          sort=""
+          onSortChange={jest.fn()}
         />,
         { wrapper: TestWrapper }
       );
@@ -28,11 +28,10 @@ describe('Feature: FilterBar Organism', () => {
       const input = screen.getByRole('textbox', { name: /search by name/i });
       await user.type(input, 'Rick');
 
-
       act(() => {
         jest.advanceTimersByTime(500);
       });
-      
+
       expect(onFilterChange).toHaveBeenCalledWith('name', 'Rick');
     });
   });
@@ -42,15 +41,14 @@ describe('Feature: FilterBar Organism', () => {
       const user = userEvent.setup();
       const onFilterChange = jest.fn();
       render(
-        <FilterBar 
-          filter={{ name: '', status: '', gender: '' }} 
+        <FilterBar
+          filter={{ name: '', status: '', gender: '' }}
           onFilterChange={onFilterChange}
-          sort="" 
-          onSortChange={jest.fn()} 
+          sort=""
+          onSortChange={jest.fn()}
         />,
         { wrapper: TestWrapper }
       );
-
 
       const filterButton = screen.getByRole('button', { name: /filters/i });
       await user.click(filterButton);
@@ -67,18 +65,18 @@ describe('Feature: FilterBar Organism', () => {
       const user = userEvent.setup();
       const onFilterChange = jest.fn();
       render(
-        <FilterBar 
-          filter={{ name: '', status: '', gender: '' }} 
+        <FilterBar
+          filter={{ name: '', status: '', gender: '' }}
           onFilterChange={onFilterChange}
-          sort="" 
-          onSortChange={jest.fn()} 
+          sort=""
+          onSortChange={jest.fn()}
         />,
         { wrapper: TestWrapper }
       );
 
       const filterButton = screen.getByRole('button', { name: /filters/i });
       await user.click(filterButton);
-      
+
       const select = screen.getByRole('combobox', { name: /filter by gender/i });
       await user.selectOptions(select, 'Female');
 
@@ -91,11 +89,11 @@ describe('Feature: FilterBar Organism', () => {
       const user = userEvent.setup();
       const onSortChange = jest.fn();
       render(
-        <FilterBar 
-          filter={{ name: '', status: '', gender: '' }} 
+        <FilterBar
+          filter={{ name: '', status: '', gender: '' }}
           onFilterChange={jest.fn()}
-          sort="" 
-          onSortChange={onSortChange} 
+          sort=""
+          onSortChange={onSortChange}
         />,
         { wrapper: TestWrapper }
       );
@@ -113,11 +111,11 @@ describe('Feature: FilterBar Organism', () => {
   describe('Scenario: Identification', () => {
     test('Given a custom id, When rendered, Then it should have the correct id attribute', () => {
       render(
-        <FilterBar 
-          filter={{ name: '', status: '', gender: '' }} 
+        <FilterBar
+          filter={{ name: '', status: '', gender: '' }}
           onFilterChange={jest.fn()}
-          sort="" 
-          onSortChange={jest.fn()} 
+          sort=""
+          onSortChange={jest.fn()}
           id="my-filter-bar"
         />,
         { wrapper: TestWrapper }

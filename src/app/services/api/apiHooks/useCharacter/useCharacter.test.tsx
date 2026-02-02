@@ -6,7 +6,6 @@ import { getCharacter } from '../../api';
 import { ApiError } from '../../../../utils/error/errors';
 import { rickMock } from '../../../mocks/charactermocks';
 
-
 jest.mock('../../api', () => ({
   getCharacter: jest.fn(),
 }));
@@ -20,7 +19,9 @@ describe('Feature: useCharacter Hook', () => {
       });
 
       const { result } = renderHook(() => useCharacter('1'), {
-        wrapper: (props: { children: React.ReactNode }) => <TestWrapper {...props} includeQueryClient />,
+        wrapper: (props: { children: React.ReactNode }) => (
+          <TestWrapper {...props} includeQueryClient />
+        ),
       });
 
       await waitFor(() => expect(result.current.isSuccess).toBe(true));
@@ -41,7 +42,9 @@ describe('Feature: useCharacter Hook', () => {
       });
 
       const { result } = renderHook(() => useCharacter('999'), {
-        wrapper: (props: { children: React.ReactNode }) => <TestWrapper {...props} includeQueryClient />,
+        wrapper: (props: { children: React.ReactNode }) => (
+          <TestWrapper {...props} includeQueryClient />
+        ),
       });
 
       await waitFor(() => expect(result.current.isError).toBe(true));

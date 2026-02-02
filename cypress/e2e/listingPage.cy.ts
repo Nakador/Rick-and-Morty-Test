@@ -11,7 +11,7 @@ describe('Listing Page Story', () => {
 
     // Verify Rick Sanchez is present
     cy.contains('Rick Sanchez').should('be.visible');
-    
+
     // Verify Morty Smith is present
     cy.contains('Morty Smith').should('be.visible');
   });
@@ -26,7 +26,7 @@ describe('Listing Page Story', () => {
 
       // Check for Filter Bar elements
       cy.get('input[placeholder="Search by name..."]').should('be.visible');
-      
+
       // On Desktop, the Toggle Button should be hidden
       cy.contains('button', 'Filters').should('not.be.visible');
 
@@ -52,7 +52,7 @@ describe('Listing Page Story', () => {
 
       // Filters should now be visible
       cy.get('select').should('be.visible');
-      
+
       // Toggle again to hide
       cy.contains('button', 'Hide Filters').click();
       cy.get('select').should('not.be.visible');
@@ -69,23 +69,23 @@ describe('Listing Page Story', () => {
     it('should update URL when searching by name', () => {
       const searchTerm = 'Rick';
       cy.get('input[placeholder="Search by name..."]').type(searchTerm);
-      
+
       cy.wait(600); // Wait for debounce
-      
+
       cy.url().should('include', `name=${searchTerm}`);
     });
 
     it('should update URL when filtering by status', () => {
       const status = 'Alive';
       cy.get('select[aria-label="Filter by status"]').select(status);
-      
+
       cy.url().should('include', `status=${status}`);
     });
 
     it('should update URL when sorting', () => {
-      const sort = 'asc'; 
+      const sort = 'asc';
       cy.get('select[aria-label="Sort characters"]').select(sort);
-      
+
       cy.url().should('include', `sort=${sort}`);
     });
   });

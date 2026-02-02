@@ -18,12 +18,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    message: "Something went wrong in this dimension.",
+    message: 'Something went wrong in this dimension.',
   },
 };
 
 export const CustomMessage: Story = {
   args: {
-    message: "Failed to fetch characters from the Rick and Morty API.",
+    message: 'Failed to fetch characters from the Rick and Morty API.',
   },
 };

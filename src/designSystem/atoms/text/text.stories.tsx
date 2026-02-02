@@ -10,22 +10,22 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    as: { 
-      control: 'select', 
-      options: ['h1', 'h2', 'h3', 'p', 'span'] 
+    as: {
+      control: 'select',
+      options: ['h1', 'h2', 'h3', 'p', 'span'],
     },
     size: {
       control: 'select',
-      options: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl']
+      options: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
     },
     weight: {
       control: 'select',
-      options: ['400', '500', '600', '700', '900']
+      options: ['400', '500', '600', '700', '900'],
     },
     color: {
       control: 'select',
-      options: ['text', 'textSecondary', 'primary', 'accent', 'error']
-    }
+      options: ['text', 'textSecondary', 'primary', 'accent', 'error'],
+    },
   },
 } satisfies Meta<typeof Text>;
 
@@ -66,7 +66,8 @@ const Container = styled.div`
 
 export const Ellipsis: Story = {
   args: {
-    children: 'This is a very long text that should be truncated with an ellipsis because it exceeds the container width.',
+    children:
+      'This is a very long text that should be truncated with an ellipsis because it exceeds the container width.',
     ellipsis: true,
   },
   decorators: [

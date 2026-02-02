@@ -26,7 +26,7 @@ describe('Feature: Box Component', () => {
       const element = screen.getByTestId(id);
       expect(element).toHaveStyle({
         padding,
-        margin
+        margin,
       });
     });
   });

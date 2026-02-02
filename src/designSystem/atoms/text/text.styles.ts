@@ -16,14 +16,16 @@ export interface StyledTextProps {
 
 export const StyledText = styled.span<StyledTextProps>`
   margin: 0;
-  font-size: ${props => props.theme.fontSizes[props.$size || 'md']};
-  font-weight: ${props => props.$weight || '400'};
-  text-align: ${props => props.$align || 'left'};
-  color: ${props => props.theme.colors[props.$color || 'text']};
-  
-  ${props => props.$ellipsis && css`
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  `}
+  font-size: ${(props) => props.theme.fontSizes[props.$size || 'md']};
+  font-weight: ${(props) => props.$weight || '400'};
+  text-align: ${(props) => props.$align || 'left'};
+  color: ${(props) => props.theme.colors[props.$color || 'text']};
+
+  ${(props) =>
+    props.$ellipsis &&
+    css`
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    `}
 `;

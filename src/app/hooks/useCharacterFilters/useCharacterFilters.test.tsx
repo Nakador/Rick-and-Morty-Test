@@ -3,7 +3,6 @@ import { renderHook, act } from '@testing-library/react';
 import { useCharacterFilters } from './useCharacterFilters';
 import { TestWrapper } from '../../services/testshelper/TestWrapper';
 
-
 const scrollToMock = jest.fn();
 Object.defineProperty(window, 'scrollTo', { value: scrollToMock, writable: true });
 
@@ -29,17 +28,19 @@ describe('Feature: useCharacterFilters Hook', () => {
     });
 
     test('Given URL params, When hook renders, Then it initializes state from params', () => {
-        const { result } = renderHook(() => useCharacterFilters(), {
-            wrapper: (props) => <TestWrapper {...props} initialEntries={['/?name=Rick&status=alive&page=2&sort=name']} />,
-        });
+      const { result } = renderHook(() => useCharacterFilters(), {
+        wrapper: (props) => (
+          <TestWrapper {...props} initialEntries={['/?name=Rick&status=alive&page=2&sort=name']} />
+        ),
+      });
 
-        expect(result.current.filters).toEqual({
-            name: 'Rick',
-            status: 'alive',
-            gender: '',
-        });
-        expect(result.current.page).toBe(2);
-        expect(result.current.sort).toBe('name');
+      expect(result.current.filters).toEqual({
+        name: 'Rick',
+        status: 'alive',
+        gender: '',
+      });
+      expect(result.current.page).toBe(2);
+      expect(result.current.sort).toBe('name');
     });
   });
 
@@ -58,16 +59,14 @@ describe('Feature: useCharacterFilters Hook', () => {
     });
 
     test('Given existing filters, When a filter is cleared, Then it removes the param', () => {
-       const { result } = renderHook(() => useCharacterFilters(), {
+      const { result } = renderHook(() => useCharacterFilters(), {
         wrapper: TestWrapper,
       });
-
 
       act(() => {
         result.current.setFilter('status', 'dead');
       });
       expect(result.current.filters.status).toBe('dead');
-
 
       act(() => {
         result.current.setFilter('status', '');

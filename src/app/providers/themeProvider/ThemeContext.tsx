@@ -13,7 +13,7 @@ export const ThemeProviderWrapper: React.FC<ThemeProviderWrapperProps> = ({ chil
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    
+
     const handleChange = (e: MediaQueryListEvent) => {
       setThemeMode(e.matches ? 'dark' : 'light');
     };
@@ -31,9 +31,7 @@ export const ThemeProviderWrapper: React.FC<ThemeProviderWrapperProps> = ({ chil
 
   return (
     <ThemeContext.Provider value={{ themeMode, toggleTheme }}>
-      <StyledThemeProvider theme={theme}>
-        {children}
-      </StyledThemeProvider>
+      <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
     </ThemeContext.Provider>
   );
 };

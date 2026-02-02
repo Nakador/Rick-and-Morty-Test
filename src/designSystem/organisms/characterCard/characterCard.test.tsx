@@ -4,8 +4,6 @@ import { render, screen } from '@testing-library/react';
 import { CharacterCard } from './characterCard';
 import { TestWrapper } from '../../../app/services/testshelper/TestWrapper';
 
-
-
 describe('Feature: CharacterCard Organism', () => {
   describe('Scenario: Rendering character details', () => {
     test('Given a character object, When the card is rendered, Then it should display the name and location', () => {

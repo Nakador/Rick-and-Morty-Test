@@ -12,37 +12,35 @@ export interface CharacterCardProps extends React.AnchorHTMLAttributes<HTMLAncho
   id?: string;
 }
 
-export const CharacterCard: React.FC<CharacterCardProps> = memo(({ 
-  character, 
-  priority = false, 
-  id = `character-card-${character.id}`,
-  ...props 
-}) => {
-  return (
-    <CardContainer 
-      to={`/details/${character.id}`} 
-      id={id}
-      data-testid={id}
-      {...props}
-    >
-      <ImageAtom 
-        src={character.image} 
-        alt={character.name} 
-        loading={priority ? "eager" : "lazy"}
-        fetchPriority={priority ? "high" : "auto"} 
-        height={400}
-        width={400}
-      />
-      <Content>
-        <Text as="h2" size="lg" weight="700" color="primary" ellipsis>{character.name}</Text>
-        <StatusBadge status={character.status} species={character.species} />
-        <Box>
-           <Text size="sm" color="textSecondary">Last known location:</Text>
-           <Text size="sm" color="text">{character.location.name}</Text>
-        </Box>
-      </Content>
-    </CardContainer>
-  );
-});
+export const CharacterCard: React.FC<CharacterCardProps> = memo(
+  ({ character, priority = false, id = `character-card-${character.id}`, ...props }) => {
+    return (
+      <CardContainer to={`/details/${character.id}`} id={id} data-testid={id} {...props}>
+        <ImageAtom
+          src={character.image}
+          alt={character.name}
+          loading={priority ? 'eager' : 'lazy'}
+          fetchPriority={priority ? 'high' : 'auto'}
+          height={400}
+          width={400}
+        />
+        <Content>
+          <Text as="h2" size="lg" weight="700" color="primary" ellipsis>
+            {character.name}
+          </Text>
+          <StatusBadge status={character.status} species={character.species} />
+          <Box>
+            <Text size="sm" color="textSecondary">
+              Last known location:
+            </Text>
+            <Text size="sm" color="text">
+              {character.location.name}
+            </Text>
+          </Box>
+        </Content>
+      </CardContainer>
+    );
+  }
+);
 
 CharacterCard.displayName = 'CharacterCard';

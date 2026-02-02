@@ -11,7 +11,10 @@ export interface AutocompleteOption {
   [key: string]: unknown;
 }
 
-export interface AutocompleteProps<T extends AutocompleteOption = AutocompleteOption> extends Omit<InputProps, 'onChange' | 'onSelect'> {
+export interface AutocompleteProps<T extends AutocompleteOption = AutocompleteOption> extends Omit<
+  InputProps,
+  'onChange' | 'onSelect'
+> {
   value: string;
   onChange: (value: string) => void;
   options: T[];
@@ -22,17 +25,17 @@ export interface AutocompleteProps<T extends AutocompleteOption = AutocompleteOp
   className?: string;
 }
 
-export const Autocomplete = <T extends AutocompleteOption = AutocompleteOption>({ 
-  options, 
-  value, 
-  onChange, 
-  onSelect, 
+export const Autocomplete = <T extends AutocompleteOption = AutocompleteOption>({
+  options,
+  value,
+  onChange,
+  onSelect,
   filterFunction,
   renderOption,
   getOptionLabel,
   id = 'autocomplete-input',
   className,
-  ...props 
+  ...props
 }: AutocompleteProps<T>) => {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -41,9 +44,7 @@ export const Autocomplete = <T extends AutocompleteOption = AutocompleteOption>(
     if (filterFunction) {
       return filterFunction(options, value);
     }
-    return options.filter(option => 
-      option.label.toLowerCase().includes(value.toLowerCase())
-    );
+    return options.filter((option) => option.label.toLowerCase().includes(value.toLowerCase()));
   }, [value, options, filterFunction]);
 
   useEffect(() => {
@@ -89,13 +90,17 @@ export const Autocomplete = <T extends AutocompleteOption = AutocompleteOption>(
       />
       {isOpen && !isEmpty(filteredOptions) && (
         <SuggestionsList data-testid="suggestions-list">
-          {filteredOptions.map((option, index) => (
+          {filteredOptions.map((option) => (
             <SuggestionItem
-              key={option.id ? String(option.id) : `${option.value}-${index}`}
+              key={option.id ? String(option.id) : `${option.value}`}
               onClick={() => handleSelectOption(option)}
               onMouseDown={(e) => e.preventDefault()}
             >
-              {renderOption ? renderOption(option) : (getOptionLabel ? getOptionLabel(option) : option.label)}
+              {renderOption
+                ? renderOption(option)
+                : getOptionLabel
+                  ? getOptionLabel(option)
+                  : option.label}
             </SuggestionItem>
           ))}
         </SuggestionsList>

@@ -1,11 +1,9 @@
-
 import { renderHook, waitFor } from '@testing-library/react';
 
 import { useCharacters } from './useCharacters';
 import { TestWrapper } from '../../../testshelper/TestWrapper';
 import { getCharacters } from '../../api';
 import { mockCharactersResponse } from '../../../mocks/apimocks';
-
 
 jest.mock('../../api', () => ({
   getCharacters: jest.fn(),

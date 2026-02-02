@@ -1,6 +1,5 @@
 import { useRef, useCallback } from 'react';
 
-
 export function useDebouncedCallback<Args extends unknown[]>(
   callback: (...args: Args) => void,
   delay: number

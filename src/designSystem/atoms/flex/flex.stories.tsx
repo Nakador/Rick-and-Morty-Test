@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const BoxItem = styled.div<{ $bg: string }>`
   width: 50px;
   height: 50px;
-  background-color: ${props => props.$bg};
+  background-color: ${(props) => props.$bg};
 `;
 
 const DemoContainer = styled(Flex)`

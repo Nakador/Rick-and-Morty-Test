@@ -36,10 +36,9 @@ describe('Feature: Image Component', () => {
       const height = 100;
       const id = 'sized-image';
 
-      render(
-        <ImageAtom id={id} src="test.jpg" alt="test" width={width} height={height} />,
-        { wrapper: TestWrapper }
-      );
+      render(<ImageAtom id={id} src="test.jpg" alt="test" width={width} height={height} />, {
+        wrapper: TestWrapper,
+      });
 
       const image = screen.getByTestId(id);
       expect(image).toHaveStyle({ width: '100px', height: '100px' });
