@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import type { Character } from '../../../app/services/api/types';
 import { Box } from '../../atoms/box/box';
 import { CardContainer, Content } from './characterCard.styles';
-import { Image } from '../../atoms/image/image';
+import { ImageAtom } from '../../atoms/image/image';
 import { StatusBadge } from '../../molecules/statusBadge/statusBadge';
 import { Text } from '../../atoms/text/text';
 
@@ -25,7 +25,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = memo(({
       data-testid={id}
       {...props}
     >
-      <Image 
+      <ImageAtom 
         src={character.image} 
         alt={character.name} 
         loading={priority ? "eager" : "lazy"}

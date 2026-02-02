@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Button } from '../button/button';
 
-export const ScrollButton = styled.button<{ $isVisible: boolean }>`
+export const ScrollButton = styled(Button)<{ $isVisible: boolean }>`
   position: fixed;
   bottom: ${props => props.theme.spacing.xl};
   right: ${props => props.theme.spacing.xl};
@@ -19,7 +20,7 @@ export const ScrollButton = styled.button<{ $isVisible: boolean }>`
   opacity: ${props => (props.$isVisible ? '1' : '0')};
   visibility: ${props => (props.$isVisible ? 'visible' : 'hidden')};
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s;
-  z-index: 1000;
+  z-index: ${props => props.theme.zIndices.modal};
 
   &:hover {
     transform: translateY(-2px);

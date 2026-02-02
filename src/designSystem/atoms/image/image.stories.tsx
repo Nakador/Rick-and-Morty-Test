@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Image } from './image';
+import { ImageAtom } from './image';
 
 const meta = {
   title: 'Atoms/Image',
-  component: Image,
+  component: ImageAtom,
   parameters: {
     layout: 'centered',
   },

@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <GlobalStyles />
         <BrowserRouter>
           <Suspense fallback={<Backdrop />}>
-            <MainLayout title="Rick and Morty">
+            <MainLayout title="Rick & Morty">
               <Routes>
                 <Route path="/" element={<ListingPage />} />
                 <Route path="/details/:id" element={<DetailsPage />} />

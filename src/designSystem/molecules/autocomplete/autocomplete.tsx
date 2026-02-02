@@ -7,33 +7,32 @@ import { isEmpty } from '../../../app/utils/typeGuards/typeGuards';
 export interface AutocompleteOption {
   value: string;
   label: string;
+  [key: string]: any;
 }
 
-export interface AutocompleteProps extends Omit<InputProps, 'onChange' | 'onSelect'> {
-  
+export interface AutocompleteProps<T extends AutocompleteOption = AutocompleteOption> extends Omit<InputProps, 'onChange' | 'onSelect'> {
   value: string;
-  
   onChange: (value: string) => void;
-  
-  options: AutocompleteOption[];
-  
-  onSelect?: (option: AutocompleteOption) => void;
-  
-  filterFunction?: (options: AutocompleteOption[], query: string) => AutocompleteOption[];
-  
+  options: T[];
+  onSelect?: (option: T) => void;
+  filterFunction?: (options: T[], query: string) => T[];
+  renderOption?: (option: T) => React.ReactNode;
+  getOptionLabel?: (option: T) => string;
   className?: string;
 }
 
-export const Autocomplete: React.FC<AutocompleteProps> = ({ 
+export const Autocomplete = <T extends AutocompleteOption = AutocompleteOption>({ 
   options, 
   value, 
   onChange, 
   onSelect, 
   filterFunction,
+  renderOption,
+  getOptionLabel,
   id = 'autocomplete-input',
   className,
   ...props 
-}) => {
+}: AutocompleteProps<T>) => {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -62,8 +61,9 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
     setIsOpen(true);
   };
 
-  const handleSelectOption = (option: AutocompleteOption) => {
-    onChange(option.label);
+  const handleSelectOption = (option: T) => {
+    const label = getOptionLabel ? getOptionLabel(option) : option.label;
+    onChange(label);
     if (onSelect) {
       onSelect(option);
     }
@@ -92,8 +92,9 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
             <SuggestionItem
               key={option.value}
               onClick={() => handleSelectOption(option)}
+              onMouseDown={(e) => e.preventDefault()}
             >
-              {option.label}
+              {renderOption ? renderOption(option) : (getOptionLabel ? getOptionLabel(option) : option.label)}
             </SuggestionItem>
           ))}
         </SuggestionsList>

@@ -5,6 +5,8 @@ import { Container, StyledAutocomplete, SearchWrapper, FiltersWrapper, ToggleBut
 import { Select } from '../../atoms/select/select';
 import { statusOptions, genderOptions, sortOptions } from './consts';
 import { useDebouncedCallback } from '../../../app/hooks/useDebouncedCallback/useDebouncedCallback';
+import { CharacterAvatar, CharacterInfo, CharacterName, CharacterMeta } from '../../molecules/autocomplete/autocomplete.styles';
+import { StatusDot } from '../../molecules/statusBadge/statusBadge.styles';
 
 export interface FilterBarProps {
   filter: CharacterFilter;
@@ -52,6 +54,18 @@ export const FilterBar: React.FC<FilterBarProps> = memo(({
           options={autocompleteOptions}
           value={localSearch}
           onChange={handleSearchChange}
+          renderOption={(option: any) => (
+            <>
+              <CharacterAvatar src={option.image} alt={option.label} />
+              <CharacterInfo>
+                <CharacterName>{option.label}</CharacterName>
+                <CharacterMeta>
+                  <StatusDot status={option.status} />
+                  {option.status} • {option.species}
+                </CharacterMeta>
+              </CharacterInfo>
+            </>
+          )}
         />
         <ToggleButton 
           type="button" 

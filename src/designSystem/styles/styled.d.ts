@@ -40,6 +40,12 @@ declare module 'styled-components' {
       xl: string;
       xxl: string;
     };
+    fontWeights: {
+      regular: number;
+      medium: number;
+      bold: number;
+      black: number;
+    };
     radii: {
       sm: string;
       md: string;
@@ -50,6 +56,12 @@ declare module 'styled-components' {
       sm: string;
       md: string;
       text: string;
+    };
+    zIndices: {
+      dropdown: number;
+      sticky: number;
+      modal: number;
+      tooltip: number;
     };
   }
 }

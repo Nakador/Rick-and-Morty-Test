@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Autocomplete } from '../../molecules/autocomplete/autocomplete';
+import { Button } from '../../atoms/button/button';
 
 
 export const Container = styled.div`
@@ -7,9 +8,11 @@ export const Container = styled.div`
   flex-direction: column;
   gap: ${props => props.theme.spacing.md};
   margin-bottom: ${props => props.theme.spacing.xl};
-  background-color: ${props => props.theme.colors.cardBackground};
-  padding: ${props => props.theme.spacing.md};
-  border-radius: ${props => props.theme.radii.xl};
+  background: linear-gradient(135deg, ${props => props.theme.colors.cardBackground} 0%, ${props => props.theme.colors.background} 100%);
+  padding: ${props => props.theme.spacing.lg};
+  border-radius: ${props => props.theme.radii.lg};
+  box-shadow: ${props => props.theme.shadows.md};
+  border: 1px solid ${props => props.theme.colors.border};
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     flex-direction: row;
@@ -50,7 +53,7 @@ export const FiltersWrapper = styled.div<{ $isOpen: boolean }>`
   }
 `;
 
-export const ToggleButton = styled.button`
+export const ToggleButton = styled(Button)`
   display: block;
   background-color: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.onPrimary};

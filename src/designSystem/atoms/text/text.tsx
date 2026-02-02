@@ -18,7 +18,7 @@ export const Text: React.FC<TextProps> = ({
   size, 
   weight, 
   align, 
-  color, 
+  color,
   ellipsis, 
   id = 'text-id', 
   children, 

@@ -9,11 +9,11 @@ import { Pagination } from '../../../designSystem/molecules/pagination/paginatio
 import { Backdrop } from '../../../designSystem/atoms/backdrop/backdrop';
 import { ErrorPage } from '../../../designSystem/organisms/errorPage/errorPage';
 import type { Character, CharacterFilter } from '../../services/api/api';
-import { Grid, PageContainer, EmptyStateContainer, EmptyStateMessage, ClearFilterLink } from './listingPage.styles';
+import { Grid, PageContainer, EmptyStateContainer, EmptyStateMessage, ClearFilterLink, EmptyStateImage } from './listingPage.styles';
 import { isEmpty } from '../../utils/typeGuards/typeGuards';
 import type { AutocompleteOption } from '../../../designSystem/molecules/autocomplete/autocomplete';
 
-
+const emptyStateAsset = "/assets/rick-morty-empty-state.png";
 
 interface ListingPageViewProps {
   filters: CharacterFilter;
@@ -61,6 +61,7 @@ export const ListingPageView: FC<ListingPageViewProps> = memo(({
             autocompleteOptions={autocompleteOptions}
           />
            <EmptyStateContainer>
+             <EmptyStateImage src={emptyStateAsset} alt="No characters found" />
              <EmptyStateMessage>
                Look, Morty, they aren't on the list, they're probably in the shrimp dimension or something <br/>
                Try to <ClearFilterLink onClick={onClearFilters}>clean the filters</ClearFilterLink>
@@ -110,8 +111,6 @@ export const ListingPageView: FC<ListingPageViewProps> = memo(({
   );
 });
 
-
-
 export const ListingPage: FC = () => {
   const { 
     filters, 
@@ -134,8 +133,16 @@ export const ListingPage: FC = () => {
 
   const autocompleteOptions = useMemo(() => {
     if (!sortedCharacters) return [];
-    const uniqueNames = Array.from(new Set(sortedCharacters.map((c: Character) => c.name)));
-    return uniqueNames.map(name => ({ value: name, label: name }));
+    // We map all characters to options. 
+    // If strict name uniqueness is required we might need to reduce, but for rich display, showing duplicates with different avatars is better.
+    return sortedCharacters.map((c: Character) => ({ 
+      value: c.name, 
+      label: c.name,
+      image: c.image,
+      status: c.status,
+      species: c.species,
+      id: c.id
+    }));
   }, [sortedCharacters]);
 
   return (

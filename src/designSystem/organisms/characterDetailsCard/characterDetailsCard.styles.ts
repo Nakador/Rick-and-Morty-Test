@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Image } from '../../atoms/image/image';
+import { ImageAtom } from '../../atoms/image/image';
 import { Text } from '../../atoms/text/text';
 
 export const Card = styled.div`
@@ -26,7 +26,7 @@ export const ImageWrapper = styled.div`
   }
 `;
 
-export const StyledImage = styled(Image)`
+export const StyledImage = styled(ImageAtom)`
   height: 100%;
 `;
 

@@ -21,6 +21,12 @@ const sharedTheme = {
     xl: '1.5rem',
     xxl: '2.5rem',
   },
+  fontWeights: {
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    black: 900,
+  },
   radii: {
     sm: '4px',
     md: '8px',
@@ -31,6 +37,13 @@ const sharedTheme = {
     sm: '0 4px 6px rgba(0, 0, 0, 0.3)',
     md: '0 8px 16px rgba(0, 0, 0, 0.4)',
     text: '2px 2px 0px rgba(0,0,0,0.2)',
+  },
+
+  zIndices: {
+    dropdown: 10,
+    sticky: 100,
+    modal: 1000,
+    tooltip: 9999,
   },
 };
 

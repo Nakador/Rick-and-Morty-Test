@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Text } from '../../atoms/text/text';
+import { Button } from '../../atoms/button/button';
 
 export const Container = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ export const Container = styled.div`
   min-height: 60vh;
 `;
 
-export const Title = styled.h1`
+export const Title = styled(Text).attrs({ as: 'h1' })`
   font-size: 4rem;
   margin: 0;
   color: ${props => props.theme.colors.error};
@@ -22,7 +23,7 @@ export const ErrorMessage = styled(Text)`
 `;
 
 
-export const ReloadButton = styled.button`
+export const ReloadButton = styled(Button)`
   margin-top: ${props => props.theme.spacing.xl};
   padding: ${props => props.theme.spacing.md} ${props => props.theme.spacing.xl};
   background-color: ${props => props.theme.colors.error};

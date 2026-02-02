@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { Image } from '../image/image';
+import { ImageAtom } from '../image/image';
 
 const float = keyframes`
   0% { 
@@ -13,7 +13,7 @@ const float = keyframes`
   }
 `;
 
-export const RickHead = styled(Image)`
+export const RickHead = styled(ImageAtom)`
   width: 120px; 
   height: 120px;
   animation: ${float} 2s ease-in-out infinite;
@@ -32,7 +32,7 @@ export const Overlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: ${props => props.theme.zIndices.tooltip};
   backdrop-filter: blur(4px);
 `;
 

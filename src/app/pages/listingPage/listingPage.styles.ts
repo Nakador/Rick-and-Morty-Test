@@ -21,6 +21,12 @@ export const EmptyStateContainer = styled.div`
   gap: ${props => props.theme.spacing.md};
 `;
 
+export const EmptyStateImage = styled.img`
+  max-width: 300px;
+  height: auto;
+  margin-bottom: ${props => props.theme.spacing.md};
+`;
+
 export const EmptyStateMessage = styled.p`
   font-size: ${props => props.theme.fontSizes.lg};
   color: ${props => props.theme.colors.text};

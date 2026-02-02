@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { Image } from './image';
+import { ImageAtom } from './image';
 import { TestWrapper } from '../../../app/services/testshelper/TestWrapper';
 
 describe('Feature: Image Component', () => {
@@ -9,7 +9,7 @@ describe('Feature: Image Component', () => {
       const src = 'test.jpg';
       const alt = 'test';
 
-      const { container } = render(<Image src={src} alt={alt} />, { wrapper: TestWrapper });
+      const { container } = render(<ImageAtom src={src} alt={alt} />, { wrapper: TestWrapper });
 
       expect(container).toBeInTheDocument();
     });
@@ -21,7 +21,7 @@ describe('Feature: Image Component', () => {
       const src = 'test.jpg';
       const alt = 'test';
 
-      render(<Image id={customId} src={src} alt={alt} />, { wrapper: TestWrapper });
+      render(<ImageAtom id={customId} src={src} alt={alt} />, { wrapper: TestWrapper });
 
       const image = screen.getByTestId(customId);
       expect(image).toBeInTheDocument();
@@ -37,7 +37,7 @@ describe('Feature: Image Component', () => {
       const id = 'sized-image';
 
       render(
-        <Image id={id} src="test.jpg" alt="test" width={width} height={height} />,
+        <ImageAtom id={id} src="test.jpg" alt="test" width={width} height={height} />,
         { wrapper: TestWrapper }
       );
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from '../../atoms/button/button';
-import { LayoutContainer, Header, Main } from './mainLayout.styles';
+import { ImageAtom } from '../../atoms/image/image';
+import { LayoutContainer, Header, Main, HeaderRight, HeaderLeft, HeaderCenter, Title } from './mainLayout.styles';
 import { ScrollToTop } from '../../atoms/scrollToTop/scrollToTop';
-import { Text } from '../../atoms/text/text';
 import { useTheme } from '../../../app/providers/themeProvider/useTheme';
 
 export interface MainLayoutProps {
@@ -23,11 +23,17 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
   return (
     <LayoutContainer id={id} data-testid={id}>
       <Header>
-        <img src={rickAsset} alt="assets/rick-svgrepo-com.svg" width={60} height={60}/>
-        <Text as="h1" size="xxl" weight="900" color="primary" align="center">{title}</Text>
-        <Button onClick={toggleTheme} aria-label="Toggle theme">
-          {themeMode === 'light' ? '🌙' : '☀️'}
-        </Button>
+        <HeaderLeft>
+          <ImageAtom src={rickAsset} alt="Rick Icon" width={60} height={60} />
+        </HeaderLeft>
+        <HeaderCenter>
+          <Title as="h1" size="xxl" color="primary" align="center">{title}</Title>
+        </HeaderCenter>
+        <HeaderRight>
+          <Button onClick={toggleTheme} aria-label="Toggle theme">
+            {themeMode === 'light' ? '🌙' : '☀️'}
+          </Button>
+        </HeaderRight>
       </Header>
       <Main>
         {children}
