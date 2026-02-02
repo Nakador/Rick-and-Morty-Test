@@ -67,11 +67,17 @@ This is our "Inter-dimensional UI Kit." It contains all presentational component
 
 #### 2. `src/app` (The Business Logic)
 This is where the "real work" happen. It contains:
-- `hooks/`: Custom React hooks for shared logic.
-- `providers/`: Context providers (Theme, QueryClient).
-- `services/`: API integration and data types.
-- `utils/`: Helper functions and type guards.
-- `pages/`: Container components that fetch data and compose Design System components.
+- `hooks/`: Custom React hooks for shared logic (e.g., `useCharacterFilters`, `useDebouncedCallback`).
+- `providers/`: The "Micro-verse Batteries" of the app. Context providers for global state and configuration (e.g., `ThemeProvider`, `QueryClientProvider`).
+- `services/`: The "Portal Gun" of the app.
+  - `api/`: API integration, data fetching logic using TanStack Query.
+  - `apiHooks/`: Abstracted hooks like `useCharacters` and `useCharacter` for clean data access.
+  - `types/`: Strongly typed definitions for API responses and entities.
+- `utils/`: The "Rick's Gadgets" folder. 
+  - `typeGuards/`: Runtime type checks to prevent "Cronenberg" data issues.
+  - `sorting/`: Logic for organizing characters across dimensions.
+  - `error/`: Standardized error handling for inter-dimensional mishaps.
+- `pages/`: Container components that handle routing logic, fetch data via hooks, and compose Design System components.
 
 ### 🎨 Design & Aesthetics
 The UI is inspired by the vibrant and chaotic (yet organized) aesthetic of **Rick and Morty**:
