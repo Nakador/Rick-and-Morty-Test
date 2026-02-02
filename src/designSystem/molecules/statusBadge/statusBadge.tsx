@@ -15,7 +15,7 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({
   ...props 
 }) => {
   return (
-    <Flex align="center" gap="0.5rem" id={id} {...props}>
+    <Flex align="center" gap="0.5rem" id={id} data-testid={id} {...props}>
       <StatusDot status={status} />
       <Text size="sm" color="text">
         {status} - {species}

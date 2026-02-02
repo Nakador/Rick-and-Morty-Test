@@ -21,7 +21,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
   const { themeMode, toggleTheme } = useTheme();
 
   return (
-    <LayoutContainer id={id}>
+    <LayoutContainer id={id} data-testid={id}>
       <Header>
         <img src={rickAsset} alt="assets/rick-svgrepo-com.svg" width={60} height={60}/>
         <Text as="h1" size="xxl" weight="900" color="primary" align="center">{title}</Text>

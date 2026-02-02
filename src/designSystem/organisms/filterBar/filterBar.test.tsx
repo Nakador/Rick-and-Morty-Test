@@ -6,6 +6,10 @@ import userEvent from '@testing-library/user-event';
 
 describe('Feature: FilterBar Organism', () => {
   describe('Scenario: Search by name', () => {
+    afterEach(() => {
+      jest.useRealTimers();
+    });
+
     test('Given a FilterBar, When user types in search input, Then onFilterChange should be called with name', async () => {
       jest.useFakeTimers();
       const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
@@ -30,7 +34,6 @@ describe('Feature: FilterBar Organism', () => {
       });
       
       expect(onFilterChange).toHaveBeenCalledWith('name', 'Rick');
-      jest.useRealTimers();
     });
   });
 

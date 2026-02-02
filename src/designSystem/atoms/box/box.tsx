@@ -20,6 +20,7 @@ export const Box: React.FC<BoxProps> = ({
       $padding={padding}
       $margin={margin}
       id={id}
+      data-testid={id}
       {...props}
     >
       {children}

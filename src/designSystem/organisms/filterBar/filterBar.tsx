@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import type { AutocompleteOption } from '../../molecules/autocomplete/autocomplete';
 import type { CharacterFilter } from '../../../app/services/api/types';
 import { Container, StyledAutocomplete, SearchWrapper, FiltersWrapper, ToggleButton } from './filterBar.styles';
@@ -17,7 +17,7 @@ export interface FilterBarProps {
 
 const defaultDebounceTime = 500;
 
-export const FilterBar: React.FC<FilterBarProps> = React.memo(({ 
+export const FilterBar: React.FC<FilterBarProps> = memo(({ 
   filter, 
   onFilterChange,
   sort,
@@ -44,9 +44,10 @@ export const FilterBar: React.FC<FilterBarProps> = React.memo(({
   };
 
   return (
-    <Container id={id}>
+    <Container id={id} data-testid={id}>
       <SearchWrapper>
         <StyledAutocomplete 
+          aria-label="Search by name"
           placeholder="Search by name..." 
           options={autocompleteOptions}
           value={localSearch}
@@ -63,6 +64,7 @@ export const FilterBar: React.FC<FilterBarProps> = React.memo(({
       
       <FiltersWrapper $isOpen={isExpanded} aria-hidden={!isExpanded}>
         <Select 
+          id="filter-status"
           aria-label="Filter by status"
           value={filter.status || ''} 
           onChange={(e: React.ChangeEvent<HTMLSelectElement>) => onFilterChange('status', e.target.value)}
@@ -70,6 +72,7 @@ export const FilterBar: React.FC<FilterBarProps> = React.memo(({
         />
 
         <Select 
+          id="filter-gender"
           aria-label="Filter by gender"
           value={filter.gender || ''} 
           onChange={(e: React.ChangeEvent<HTMLSelectElement>) => onFilterChange('gender', e.target.value)}
@@ -77,6 +80,7 @@ export const FilterBar: React.FC<FilterBarProps> = React.memo(({
         />
 
         <Select 
+          id="sort-order"
           aria-label="Sort characters"
           value={sort} 
           onChange={(e: React.ChangeEvent<HTMLSelectElement>) => onSortChange(e.target.value)}

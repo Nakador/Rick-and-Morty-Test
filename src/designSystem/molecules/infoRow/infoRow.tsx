@@ -16,7 +16,7 @@ export const InfoRow: React.FC<InfoRowProps> = ({
   ...props 
 }) => {
   return (
-    <Box margin="0 0 1.5rem 0" id={id} {...props}>
+    <Box margin="0 0 1.5rem 0" id={id} data-testid={id} {...props}>
       <Label size="sm" color="textSecondary">
         {label}
       </Label>

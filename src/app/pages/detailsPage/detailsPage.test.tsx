@@ -5,7 +5,7 @@ import { TestWrapper } from '../../services/testshelper/TestWrapper';
 import { createMockQueryResult } from '../../services/mocks/mockhelpers';
 import * as useCharacterHook from '../../services/api/apiHooks/useCharacter/useCharacter';
 
-jest.mock('../../services/api/apiHooks/useCharacter', () => ({
+jest.mock('../../services/api/apiHooks/useCharacter/useCharacter', () => ({
   useCharacter: jest.fn(),
 }));
 import { ApiError } from '../../utils/error/errors';

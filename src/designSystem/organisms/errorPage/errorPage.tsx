@@ -22,7 +22,7 @@ export const ErrorPage: React.FC<ErrorPageProps> = ({
   };
 
   return (
-    <Container id={id}>
+    <Container id={id} data-testid={id}>
       <Title>Oops!</Title>
       <Text as="h1" size="xxl" weight="900" color="primary">The Microverse is Dead!</Text>
       <ErrorMessage size="lg">

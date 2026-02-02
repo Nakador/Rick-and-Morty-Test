@@ -18,7 +18,7 @@ describe('Feature: InfoRow Component', () => {
 
     test('Given a label and a ReactNode value, When the component is rendered, Then the custom node should be visible', () => {
       const label = 'Origin';
-      const value = <span>Earth</span>;
+      const value = <span data-testid="custom-value">Earth</span>;
 
       render(<InfoRow label={label} value={value} />, { wrapper: TestWrapper });
 

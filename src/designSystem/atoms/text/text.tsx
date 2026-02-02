@@ -33,6 +33,7 @@ export const Text: React.FC<TextProps> = ({
       $color={color}
       $ellipsis={ellipsis}
       id={id}
+      data-testid={id}
       {...props}
     >
       {children}

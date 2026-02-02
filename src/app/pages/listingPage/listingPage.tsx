@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import { memo, useMemo, useCallback, type FC } from 'react';
+
 import { useCharacters } from '../../services/api/apiHooks/useCharacters/useCharacters';
 import { useCharacterFilters } from '../../hooks/useCharacterFilters/useCharacterFilters';
 import { sortCharacters } from '../../utils/sorting/sorting';
@@ -30,7 +31,7 @@ interface ListingPageViewProps {
   autocompleteOptions?: AutocompleteOption[];
 }
 
-export const ListingPageView: React.FC<ListingPageViewProps> = React.memo(({ 
+export const ListingPageView: FC<ListingPageViewProps> = memo(({ 
   filters, 
   page, 
   sort, 
@@ -45,8 +46,8 @@ export const ListingPageView: React.FC<ListingPageViewProps> = React.memo(({
   onClearFilters,
   autocompleteOptions
 }) => {
-  const handlePrevPage = React.useCallback(() => onPageChange(page - 1), [onPageChange, page]);
-  const handleNextPage = React.useCallback(() => onPageChange(page + 1), [onPageChange, page]);
+  const handlePrevPage = useCallback(() => onPageChange(page - 1), [onPageChange, page]);
+  const handleNextPage = useCallback(() => onPageChange(page + 1), [onPageChange, page]);
 
   if (error && !isLoading) {
     if (error.message === "There is nothing here" || error.message.includes("404")) {
@@ -111,7 +112,7 @@ export const ListingPageView: React.FC<ListingPageViewProps> = React.memo(({
 
 
 
-export const ListingPage: React.FC = () => {
+export const ListingPage: FC = () => {
   const { 
     filters, 
     page, 

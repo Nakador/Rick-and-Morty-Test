@@ -6,7 +6,7 @@ type BackdropProps = React.HTMLAttributes<HTMLDivElement>;
 
 export const Backdrop: React.FC<BackdropProps> = ({ id = 'backdrop-id', ...props }) => {
   return (
-    <Overlay id={id} {...props}>
+    <Overlay id={id} data-testid={id} {...props}>
       <LoaderContainer>
         <RickHead src={rickAsset} alt="Rick Loading" />
       </LoaderContainer>

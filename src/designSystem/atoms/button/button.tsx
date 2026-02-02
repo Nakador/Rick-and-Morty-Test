@@ -6,7 +6,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 export const Button: React.FC<ButtonProps> = ({ children, id='button-id', ...props }) => (
-    <StyledButton id={id} {...props}>
+    <StyledButton id={id} data-testid={id} {...props}>
       {children}
     </StyledButton>
   );

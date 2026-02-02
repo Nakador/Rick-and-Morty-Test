@@ -9,8 +9,8 @@ import { ApiError } from '../../utils/error/errors';
 import userEvent from '@testing-library/user-event';
 
 
-jest.mock('../../services/api/apiHooks/useCharacters');
-jest.mock('../../hooks/useCharacterFilters');
+jest.mock('../../services/api/apiHooks/useCharacters/useCharacters');
+jest.mock('../../hooks/useCharacterFilters/useCharacterFilters');
 
 describe('Feature: ListingPage', () => {
   const mockFilters = {

@@ -29,6 +29,7 @@ export const Flex: React.FC<FlexProps> = ({
       $wrap={wrap}
       $direction={direction}
       id={id}
+      data-testid={id}
       {...props}
     >
       {children}

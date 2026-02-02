@@ -22,6 +22,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = memo(({
     <CardContainer 
       to={`/details/${character.id}`} 
       id={id}
+      data-testid={id}
       {...props}
     >
       <Image 

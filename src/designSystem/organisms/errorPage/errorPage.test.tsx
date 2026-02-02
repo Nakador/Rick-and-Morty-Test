@@ -32,7 +32,7 @@ describe('Feature: ErrorPage Organism', () => {
     test('Given a custom id, When rendered, Then it should have the correct id attribute', () => {
       render(<ErrorPage id="custom-error" />, { wrapper: TestWrapper });
 
-      const element = screen.getByTestId('error-page');
+      const element = screen.getByTestId('custom-error');
       expect(element).toBeInTheDocument();
       expect(element).toHaveAttribute('id', 'custom-error');
     });

@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import { Autocomplete } from './autocomplete';
+import { TestWrapper } from '../../../app/services/testshelper/TestWrapper';
 
 const mockOptions = [
   { value: '1', label: 'Apple' },
@@ -16,7 +17,8 @@ describe('Autocomplete', () => {
         onChange={() => {}} 
         options={mockOptions} 
         placeholder="Test placeholder" 
-      />
+      />,
+      { wrapper: TestWrapper }
     );
     
     expect(screen.getByPlaceholderText('Test placeholder')).toBeInTheDocument();
@@ -29,7 +31,8 @@ describe('Autocomplete', () => {
         value="Ap" 
         onChange={handleChange} 
         options={mockOptions} 
-      />
+      />,
+      { wrapper: TestWrapper }
     );
 
     const input = screen.getByRole('textbox');
@@ -48,7 +51,8 @@ describe('Autocomplete', () => {
         value="" 
         onChange={handleChange} 
         options={mockOptions} 
-      />
+      />,
+      { wrapper: TestWrapper }
     );
 
     const input = screen.getByRole('textbox');
@@ -66,7 +70,8 @@ describe('Autocomplete', () => {
         onChange={handleChange} 
         onSelect={handleSelect}
         options={mockOptions} 
-      />
+      />,
+      { wrapper: TestWrapper }
     );
 
     const input = screen.getByRole('textbox');
@@ -86,7 +91,8 @@ describe('Autocomplete', () => {
         value="Zzz" 
         onChange={() => {}} 
         options={mockOptions} 
-      />
+      />,
+      { wrapper: TestWrapper }
     );
 
     const input = screen.getByRole('textbox');

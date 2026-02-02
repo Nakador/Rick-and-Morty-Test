@@ -87,7 +87,7 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
         {...props}
       />
       {isOpen && !isEmpty(filteredOptions) && (
-        <SuggestionsList>
+        <SuggestionsList data-testid="suggestions-list">
           {filteredOptions.map((option) => (
             <SuggestionItem
               key={option.value}

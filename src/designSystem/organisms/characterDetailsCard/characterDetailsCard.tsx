@@ -15,7 +15,7 @@ export const CharacterDetailsCard: React.FC<CharacterDetailsCardProps> = ({
   id = `character-details-${character.id}` 
 }) => {
   return (
-    <Card id={id}>
+    <Card id={id} data-testid={id}>
       <ImageWrapper>
         <StyledImage src={character.image} alt={character.name} />
       </ImageWrapper>
