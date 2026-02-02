@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Preview } from '@storybook/react-vite'
-import { ThemeProviderWrapper } from '../src/context/ThemeContext';
-import { GlobalStyles } from '../src/styles/globalstyles';
+import { ThemeProviderWrapper } from '../src/app/providers/themeProvider/ThemeContext';
+import { GlobalStyles } from '../src/designSystem/styles/globalstyles';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient({
