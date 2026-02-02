@@ -127,17 +127,7 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -149,16 +139,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -210,7 +191,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useMemo, type FC } from 'react';
 &nbsp;
 import { useCharacters } from '../../services/api/apiHooks/useCharacters/useCharacters';
@@ -223,42 +203,33 @@ import type { Character } from '../../services/api/api';
 import { ListingPageView } from './listingPageView';
 &nbsp;
 export const ListingPage: FC = () =&gt; {
-  const { 
-    filters, 
-    page, 
-    sort, 
-    setFilter, 
-    setSort, 
-    setPage,
-    clearFilters
-  } = useCharacterFilters();
-    
+  const { filters, page, sort, setFilter, setSort, setPage, clearFilters } = useCharacterFilters();
 &nbsp;
   const { data, isLoading, error, isFetching } = useCharacters({ page, ...filters });
 &nbsp;
   const sortedCharacters = useMemo(() =&gt; {
     if (isEmpty(data?.results)) return [];
-     
+&nbsp;
     return sortCharacters(data!.results!, sort);
   }, [data, sort]);
 &nbsp;
   const autocompleteOptions = useMemo(() =&gt; {
     <span class="missing-if-branch" title="if path not taken" >I</span>if (!sortedCharacters) <span class="cstat-no" title="statement not covered" >return [];</span>
-    // We map all characters to options. 
+    // We map all characters to options.
     // If strict name uniqueness is required we might need to reduce, but for rich display, showing duplicates with different avatars is better.
-    return sortedCharacters.map((c: Character) =&gt; ({ 
-      value: c.name, 
+    return sortedCharacters.map((c: Character) =&gt; ({
+      value: c.name,
       label: c.name,
       image: c.image,
       status: c.status,
       species: c.species,
-      id: c.id
+      id: c.id,
     }));
   }, [sortedCharacters]);
 &nbsp;
   return (
-    &lt;PageContainer id={"listing-page"}&gt;
-      &lt;FilterBar 
+    &lt;PageContainer id={'listing-page'}&gt;
+      &lt;FilterBar
         filter={filters}
         onFilterChange={setFilter}
         sort={sort}
@@ -266,25 +237,24 @@ export const ListingPage: FC = () =&gt; {
         autocompleteOptions={autocompleteOptions}
       /&gt;
 &nbsp;
-    &lt;ListingPageView
-      filters={filters}
-      page={page}
-      sort={sort}
-      data={data}
-      isLoading={isLoading}
-      isFetching={isFetching}
-      error={error}
-      sortedCharacters={sortedCharacters}
-      onFilterChange={setFilter}
-      onSortChange={setSort}
-      onPageChange={setPage}
-      onClearFilters={clearFilters}
-      autocompleteOptions={autocompleteOptions}
+      &lt;ListingPageView
+        filters={filters}
+        page={page}
+        sort={sort}
+        data={data}
+        isLoading={isLoading}
+        isFetching={isFetching}
+        error={error}
+        sortedCharacters={sortedCharacters}
+        onFilterChange={setFilter}
+        onSortChange={setSort}
+        onPageChange={setPage}
+        onClearFilters={clearFilters}
+        autocompleteOptions={autocompleteOptions}
       /&gt;
     &lt;/PageContainer&gt;
   );
 };
-&nbsp;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -292,7 +262,7 @@ export const ListingPage: FC = () =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-02T23:26:17.584Z
+                at 2026-02-02T23:48:29.696Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

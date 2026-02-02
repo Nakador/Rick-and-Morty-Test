@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>24/24</span>
+                <span class='fraction'>25/25</span>
             </div>
         
             
@@ -129,17 +129,22 @@
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
@@ -158,7 +163,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -199,19 +203,22 @@
 import { Autocomplete } from '../../molecules/autocomplete/autocomplete';
 import { Button } from '../../atoms/button/button';
 &nbsp;
-&nbsp;
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${props =&gt; props.theme.spacing.md};
-  margin-bottom: ${props =&gt; props.theme.spacing.xl};
-  background: linear-gradient(135deg, ${props =&gt; props.theme.colors.cardBackground} 0%, ${props =&gt; props.theme.colors.background} 100%);
-  padding: ${props =&gt; props.theme.spacing.lg};
-  border-radius: ${props =&gt; props.theme.radii.lg};
-  box-shadow: ${props =&gt; props.theme.shadows.md};
-  border: 1px solid ${props =&gt; props.theme.colors.border};
+  gap: ${(props) =&gt; props.theme.spacing.md};
+  margin-bottom: ${(props) =&gt; props.theme.spacing.xl};
+  background: linear-gradient(
+    135deg,
+    ${(props) =&gt; props.theme.colors.cardBackground} 0%,
+    ${(props) =&gt; props.theme.colors.background} 100%
+  );
+  padding: ${(props) =&gt; props.theme.spacing.lg};
+  border-radius: ${(props) =&gt; props.theme.radii.lg};
+  box-shadow: ${(props) =&gt; props.theme.shadows.md};
+  border: 1px solid ${(props) =&gt; props.theme.colors.border};
 &nbsp;
-  @media (min-width: ${props =&gt; props.theme.breakpoints.tablet}) {
+  @media (min-width: ${(props) =&gt; props.theme.breakpoints.tablet}) {
     flex-direction: row;
     align-items: center;
   }
@@ -219,16 +226,15 @@ export const Container = styled.div`
 &nbsp;
 export const SearchWrapper = styled.div`
   display: flex;
-  gap: ${props =&gt; props.theme.spacing.md};
+  gap: ${(props) =&gt; props.theme.spacing.md};
   width: 100%;
   align-items: center;
 &nbsp;
-  @media (min-width: ${props =&gt; props.theme.breakpoints.tablet}) {
+  @media (min-width: ${(props) =&gt; props.theme.breakpoints.tablet}) {
     width: auto;
     flex: 1;
   }
 `;
-&nbsp;
 &nbsp;
 export const StyledAutocomplete = styled(Autocomplete)`
   flex: 1;
@@ -236,14 +242,14 @@ export const StyledAutocomplete = styled(Autocomplete)`
 `;
 &nbsp;
 export const FiltersWrapper = styled.div&lt;{ $isOpen: boolean }&gt;`
-  display: ${props =&gt; (props.$isOpen ? 'flex' : 'none')};
+  display: ${(props) =&gt; (props.$isOpen ? 'flex' : 'none')};
   flex-direction: column;
-  gap: ${props =&gt; props.theme.spacing.md};
+  gap: ${(props) =&gt; props.theme.spacing.md};
   width: 100%;
   justify-content: center;
   align-items: center;
 &nbsp;
-  @media (min-width: ${props =&gt; props.theme.breakpoints.tablet}) {
+  @media (min-width: ${(props) =&gt; props.theme.breakpoints.tablet}) {
     display: flex;
     flex-direction: row;
     width: auto;
@@ -252,12 +258,12 @@ export const FiltersWrapper = styled.div&lt;{ $isOpen: boolean }&gt;`
 &nbsp;
 export const ToggleButton = styled(Button)`
   display: block;
-  background-color: ${props =&gt; props.theme.colors.primary};
-  color: ${props =&gt; props.theme.colors.onPrimary};
+  background-color: ${(props) =&gt; props.theme.colors.primary};
+  color: ${(props) =&gt; props.theme.colors.onPrimary};
   border: none;
   cursor: pointer;
-  
-  @media (min-width: ${props =&gt; props.theme.breakpoints.tablet}) {
+&nbsp;
+  @media (min-width: ${(props) =&gt; props.theme.breakpoints.tablet}) {
     display: none;
   }
 `;
@@ -268,7 +274,7 @@ export const ToggleButton = styled(Button)`
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-02T23:26:17.584Z
+                at 2026-02-02T23:48:29.696Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

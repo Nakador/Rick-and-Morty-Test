@@ -130,12 +130,17 @@
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -148,9 +153,8 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -161,21 +165,29 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
@@ -202,7 +214,6 @@ import { useSearchParams } from 'react-router-dom';
 import type { CharacterFilter } from '../../services/api/api';
 import { isEmpty } from '../../utils/typeGuards/typeGuards';
 &nbsp;
-&nbsp;
 export const useCharacterFilters = () =&gt; {
   const [searchParams, setSearchParams] = useSearchParams();
 &nbsp;
@@ -215,35 +226,42 @@ export const useCharacterFilters = () =&gt; {
   const page = Number(searchParams.get('page')) || 1;
   const sort = searchParams.get('sort') || '';
 &nbsp;
+  const setFilter = useCallback(
+    (key: keyof CharacterFilter, value: string) =&gt; {
+      const newParams = new URLSearchParams(searchParams);
+      if (!isEmpty(value)) {
+        newParams.set(key as string, value);
+      } else {
+        newParams.delete(key as string);
+      }
+      newParams.set('page', '1');
+      setSearchParams(newParams);
+    },
+    [searchParams, setSearchParams]
+  );
 &nbsp;
+  const setSort = useCallback(
+    (value: string) =&gt; {
+      const newParams = new URLSearchParams(searchParams);
+      if (isEmpty(value)) {
+        newParams.delete('sort');
+      } else {
+        newParams.set('sort', value);
+      }
+      setSearchParams(newParams);
+    },
+    [searchParams, setSearchParams]
+  );
 &nbsp;
-  const setFilter = useCallback((key: keyof CharacterFilter, value: string) =&gt; {
-    const newParams = new URLSearchParams(searchParams);
-    if (!isEmpty(value)) {
-      newParams.set(key as string, value);
-    } else {
-      newParams.delete(key as string);
-    }
-    newParams.set('page', '1');
-    setSearchParams(newParams);
-  }, [searchParams, setSearchParams]);
-&nbsp;
-  const setSort = useCallback((value: string) =&gt; {
-    const newParams = new URLSearchParams(searchParams);
-    if (isEmpty(value)) {
-      newParams.delete('sort');
-    } else {
-      newParams.set('sort', value);
-    }
-    setSearchParams(newParams);
-  }, [searchParams, setSearchParams]);
-&nbsp;
-  const setPage = useCallback((newPage: number) =&gt; {
-    const newParams = new URLSearchParams(searchParams);
-    newParams.set('page', newPage.toString());
-    setSearchParams(newParams);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [searchParams, setSearchParams]);
+  const setPage = useCallback(
+    (newPage: number) =&gt; {
+      const newParams = new URLSearchParams(searchParams);
+      newParams.set('page', newPage.toString());
+      setSearchParams(newParams);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    [searchParams, setSearchParams]
+  );
 &nbsp;
   const clearFilters = useCallback(<span class="fstat-no" title="function not covered" >() =</span>&gt; {
     const newParams = <span class="cstat-no" title="statement not covered" >new URLSearchParams(searchParams);</span>
@@ -271,7 +289,7 @@ export const useCharacterFilters = () =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-02T23:26:17.584Z
+                at 2026-02-02T23:48:29.696Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

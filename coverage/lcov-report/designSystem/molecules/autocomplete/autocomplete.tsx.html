@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">85% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>15/18</span>
+                <span class='fraction'>17/20</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.11% </span>
+                <span class="strong">93.93% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>32/34</span>
+                <span class='fraction'>31/33</span>
             </div>
         
             
@@ -167,11 +167,21 @@
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
 <a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -209,9 +219,7 @@
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">29x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">30x</span>
@@ -271,6 +279,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState, useRef, useMemo, useEffect } from 'react';
 import type { InputProps } from '../../atoms/input/input';
 import { Input } from '../../atoms/input/input';
@@ -280,10 +292,14 @@ import { isEmpty } from '../../../app/utils/typeGuards/typeGuards';
 export interface AutocompleteOption {
   value: string;
   label: string;
-  [key: string]: any;
+  id?: string | number;
+  [key: string]: unknown;
 }
 &nbsp;
-export interface AutocompleteProps&lt;T extends AutocompleteOption = AutocompleteOption&gt; extends Omit&lt;InputProps, 'onChange' | 'onSelect'&gt; {
+export interface AutocompleteProps&lt;T extends AutocompleteOption = AutocompleteOption&gt; extends Omit&lt;
+  InputProps,
+  'onChange' | 'onSelect'
+&gt; {
   value: string;
   onChange: (value: string) =&gt; void;
   options: T[];
@@ -294,17 +310,17 @@ export interface AutocompleteProps&lt;T extends AutocompleteOption = Autocomplet
   className?: string;
 }
 &nbsp;
-export const Autocomplete = &lt;T extends AutocompleteOption = AutocompleteOption&gt;({ 
-  options, 
-  value, 
-  onChange, 
-  onSelect, 
+export const Autocomplete = &lt;T extends AutocompleteOption = AutocompleteOption&gt;({
+  options,
+  value,
+  onChange,
+  onSelect,
   filterFunction,
   renderOption,
   getOptionLabel,
   id = 'autocomplete-input',
   className,
-  ...props 
+  ...props
 }: AutocompleteProps&lt;T&gt;) =&gt; {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef&lt;HTMLDivElement&gt;(null);
@@ -313,9 +329,7 @@ export const Autocomplete = &lt;T extends AutocompleteOption = AutocompleteOptio
     <span class="missing-if-branch" title="if path not taken" >I</span>if (filterFunction) {
 <span class="cstat-no" title="statement not covered" >      return filterFunction(options, value);</span>
     }
-    return options.filter(option =&gt; 
-      option.label.toLowerCase().includes(value.toLowerCase())
-    );
+    return options.filter((option) =&gt; option.label.toLowerCase().includes(value.toLowerCase()));
   }, [value, options, filterFunction]);
 &nbsp;
   useEffect(() =&gt; {
@@ -363,11 +377,15 @@ export const Autocomplete = &lt;T extends AutocompleteOption = AutocompleteOptio
         &lt;SuggestionsList data-testid="suggestions-list"&gt;
           {filteredOptions.map((option) =&gt; (
             &lt;SuggestionItem
-              key={option.value}
+              key={option.id ? String(option.id) : `${option.value}`}
               onClick={() =&gt; handleSelectOption(option)}
               onMouseDown={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >e.preventDefault()}</span>
             &gt;
-              {renderOption ? renderOption(option) : (getOptionLabel ? <span class="branch-0 cbranch-no" title="branch not covered" >getOptionLabel(option) </span>: option.label)}
+              {renderOption
+                ? renderOption(option)
+                : getOptionLabel
+                  ? <span class="branch-0 cbranch-no" title="branch not covered" >getOptionLabel(option)</span>
+                  : option.label}
             &lt;/SuggestionItem&gt;
           ))}
         &lt;/SuggestionsList&gt;
@@ -382,7 +400,7 @@ export const Autocomplete = &lt;T extends AutocompleteOption = AutocompleteOptio
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-02T23:26:17.584Z
+                at 2026-02-02T23:48:29.696Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
