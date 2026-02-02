@@ -25,4 +25,18 @@ export const GlobalStyles = createGlobalStyle`
     max-width: 100%;
     display: block;
   }
+
+  /* Global Scrollbar Styles */
+  *::-webkit-scrollbar {
+    width: ${props => props.theme.spacing.sm};
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: ${props => props.theme.colors.text};
+    border-radius: ${props => props.theme.radii.xl};
+  }
 `;

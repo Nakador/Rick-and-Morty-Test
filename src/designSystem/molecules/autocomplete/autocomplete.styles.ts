@@ -20,19 +20,6 @@ export const SuggestionsList = styled.ul`
   box-shadow: ${props => props.theme.shadows.md};
   max-height: 200px;
   overflow-y: auto;
-
-  &::-webkit-scrollbar {
-    width: ${props => props.theme.spacing.sm};
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: ${props => props.theme.colors.text};
-    border-radius: ${props => props.theme.radii.xl};
-  }
 `;
 
 export const SuggestionItem = styled.li`
