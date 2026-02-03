@@ -22,9 +22,10 @@ export const SuggestionsList = styled.ul`
   box-shadow: ${(props) => props.theme.shadows.md};
   max-height: 200px;
   overflow-y: auto;
+  width: 100%;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.mobile}) {
-    width: 14rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    width: 13rem;
   }
 `;
 
