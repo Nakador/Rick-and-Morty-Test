@@ -92,47 +92,55 @@ The UI is inspired by the vibrant and chaotic (yet organized) aesthetic of **Ric
 
 ## Questions & Answers
 
-### 1. What are Custom Hooks in React? Propose a practical example where you would create one and explain why it would be useful (skip this if React is not your main known framework).
+### 1. What are Custom Hooks in React? Propose a practical example where you would create one and explain why it would be useful.
 
-Custom Hooks are JavaScript functions that start with "use" and allow you to extract and reuse stateful logic between components without changing your component hierarchy.
-best example shared fucntion between components managing data manipulation and logic,
-seprating data and ui code
+Custom Hooks are JavaScript functions that start with `use` and allow you to extract and reuse stateful logic between components without changing your component hierarchy. They enable a clean separation of concerns by moving business logic, side effects, or data orchestration out of the UI components.
 
-Example: A `useDebounce` hook to debounce keystrokes of the user.
+**Practical Example:**
+In this project, I implemented the `useDebouncedCallback` hook ([useDebouncedCallback.ts](file:///Users/nakador/Code%20Projects/untitled%20folder/test/src/app/hooks/useDebouncedCallback/useDebouncedCallback.ts)). 
+- **Why it's useful:** Without it, every keystroke in the Autocomplete search would trigger an API call, leading to performance bottlenecks and unnecessary server load. By encapsulating this logic in a custom hook, we ensure that the search logic is reusable, testable (see [useDebouncedCallback.test.ts](file:///Users/nakador/Code%20Projects/untitled%20folder/test/src/app/hooks/useDebouncedCallback/useDebouncedCallback.test.ts)), and decoupled from the `Autocomplete` component's rendering logic.
 
 ### 2. What advantages does using TypeScript offer in a Frontend project? What challenges might arise when integrating it into an existing project?
 
 TypeScript adds static typing to JavaScript, transforming potential runtime errors into compile-time errors.
 
-Advantages: Improved developer experience through better autocompletion, self-documenting code, and safer refactoring.
+**Advantages:**
+- **Improved Developer Experience (DX):** Superior autocompletion and "Intellisense" make navigation and usage of large codebases much faster.
+- **Self-Documenting Code:** Interfaces and Types act as a living contract for data structures, reducing the need for extensive external documentation.
+- **Safer Refactoring:** The compiler immediately catches breaking changes when modifying shared types or component props.
 
-Challenges: it may have some initial setup overhead, a learning curve but the benefits are worth it.
+**Challenges:**
+- **Initial Setup/Overhead:** Configuring `tsconfig.json` and build pipelines (like Vite) requires upfront effort.
+- **Learning Curve:** Teams new to static typing may initially experience slower development as they learn to define complex types (e.g., Generics).
+- **External Libraries:** Integrating legacy JavaScript libraries "without types" may require writing custom declaration files (`.d.ts`).
 
 ### 3. How would you approach implementing testing in a Frontend application? What types of tests do you consider essential, and why?
 
-my approch to testing will be in that order:
+My approach follows the **Testing Trophy** model, prioritizing tests that provide the most "confidence per line of code."
 
-1. Unit Tests: For isolated business logic (function,component and hooks unit tests ).
-2. Integration Tests: For component interactions (navigation between pages or itegration between critical flow).
-3. E2E Tests: For the most important "happy path" user flows (most critical and expensive tests).
+**Essential Test Types:**
+1.  **Unit Tests (Jest):** For isolated business logic, utility functions, and small "atom" components. These are fast and provide granular feedback.
+2.  **Integration Tests (React Testing Library):** Essential for verifying how multiple components (Molecules/Organisms) work together and interact with the DOM as a user would.
+3.  **End-to-End (E2E) Tests (Cypress):** For critical "happy paths" (e.g., searching for a character and viewing results). These are the most expensive but provide the highest confidence that the system works as a whole.
 
-Why: This ensures reliability without slowing down development cycles.
+**Why:** This tiered approach ensures comprehensive coverage without the maintenance burden of testing every implementation detail.
 
 ### 4. You are assigned a project with a team distributed across different time zones and cultures. What strategies would you use to ensure effective communication and an efficient workflow?
 
-Effective remote work relies on asynchronous communication and clear documentation.
-from my experience working in remote teams from different time zones my strategies are:
+Effective distributed work relies on a shift from synchronous to **asynchronous-first** communication.
 
-- Establish a "Golden Overlap" (2–3 hours) for synchronous meetings.
-- Use detailed PR descriptions and ADRs (Architecture Decision Records).
-- Standardize task definitions to minimize back-and-forth across time zones.
+**Strategies:**
+- **Asynchronous Syncs:** Use detailed PR descriptions, recorded Loom/video demos, and Architecture Decision Records (ADRs) to provide context without requiring a meeting.
+- **Golden Overlap:** Establish a small window (2-4 hours) where all team members are online for high-bandwidth discussions or pairing.
+- **Strong Documentation:** Maintain a centralized "Source of Truth" (like this README or a Wiki) to minimize "knowledge silos" caused by timezone gaps.
+-  **Cultural Awareness:** Respect local holidays and working hours, and encourage social channels to build rapport beyond functional tasks.
 
 ### 5. A team member suggests a technical solution that you consider inefficient or incorrect. How would you handle this situation to avoid tension while ensuring that the best solution is adopted?
 
-The focus should be on objective data rather than personal opinions to maintain a collaborative environment.
+The focus should always be on **objective data and project constraints** rather than personal opinions.
 
-i will think of those approachs:
-
-- Ask clarifying questions to understand their rationale.
-- Propose a "Proof of Concept" (PoC) or request for comments (RFC) to compare solutions.
-- Frame the feedback around project constraints (scalability, maintenance) to keep the conversation professional and merit-based.
+**Approach:**
+- **Clarifying Questions:** "Help me understand how this approach handles [Edge Case X]?" This allows the colleague to discover potential flaws themselves or provide context I might be missing.
+- **Proof of Concept (PoC):** If there's a disagreement, I suggest a quick time-boxed spike to compare both solutions based on measurable metrics (performance, bundle size, readability).
+- **Merit-Based Feedback:** Frame the critique around established project standards or patterns (e.g., "This might introduce a performance bottleneck in the FilterBar because...").
+- **Assume Positive Intent:** Start from the premise that everyone wants the best outcome for the project.
