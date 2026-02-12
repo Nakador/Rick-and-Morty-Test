@@ -38,6 +38,7 @@ export const Autocomplete = <T extends AutocompleteOption = AutocompleteOption>(
   ...props
 }: AutocompleteProps<T>) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const filteredOptions = useMemo(() => {
@@ -46,6 +47,10 @@ export const Autocomplete = <T extends AutocompleteOption = AutocompleteOption>(
     }
     return options.filter((option) => option.label.toLowerCase().includes(value.toLowerCase()));
   }, [value, options, filterFunction]);
+
+  useEffect(() => {
+    setHighlightedIndex(-1);
+  }, [filteredOptions, isOpen]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -78,6 +83,48 @@ export const Autocomplete = <T extends AutocompleteOption = AutocompleteOption>(
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!isOpen || isEmpty(filteredOptions)) {
+      if (e.key === 'ArrowDown' && !isEmpty(filteredOptions)) {
+        setIsOpen(true);
+      }
+      return;
+    }
+
+
+    if (!isOpen || isEmpty(filteredOptions)) {
+      if (e.key === 'ArrowDown' && !isEmpty(filteredOptions)) {
+        setIsOpen(true);
+      }
+      return;
+    }
+
+
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        setHighlightedIndex((prev) => (prev + 1) % filteredOptions.length);
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        setHighlightedIndex((prev) => (prev - 1 + filteredOptions.length) % filteredOptions.length);
+        break;
+      case 'Enter':
+        e.preventDefault();
+        if (highlightedIndex >= 0 && highlightedIndex < filteredOptions.length) {
+          handleSelectOption(filteredOptions[highlightedIndex]);
+        }
+        break;
+      case 'Escape':
+        e.preventDefault();
+        setIsOpen(false);
+        break;
+      case 'Tab':
+        setIsOpen(false);
+        break;
+    }
+  };
+
   return (
     <Wrapper ref={wrapperRef} className={className}>
       <Input
@@ -85,14 +132,27 @@ export const Autocomplete = <T extends AutocompleteOption = AutocompleteOption>(
         value={value}
         onChange={handleInputChange}
         onFocus={handleFocus}
+        onKeyDown={handleKeyDown}
         autoComplete="off"
+        role="combobox"
+        aria-autocomplete="list"
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
+        aria-controls={`${id}-listbox`}
+        aria-activedescendant={
+          highlightedIndex >= 0 ? `${id}-option-${highlightedIndex}` : undefined
+        }
         {...props}
       />
       {isOpen && !isEmpty(filteredOptions) && (
-        <SuggestionsList data-testid="suggestions-list">
-          {filteredOptions.map((option) => (
+        <SuggestionsList id={`${id}-listbox`} role="listbox" data-testid="suggestions-list">
+          {filteredOptions.map((option, index) => (
             <SuggestionItem
               key={option.id ? String(option.id) : `${option.value}`}
+              id={`${id}-option-${index}`}
+              role="option"
+              aria-selected={highlightedIndex === index}
+              $isHighlighted={highlightedIndex === index}
               onClick={() => handleSelectOption(option)}
               onMouseDown={(e) => e.preventDefault()}
             >

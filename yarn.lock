@@ -1535,31 +1535,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-vitest@npm:^10.2.3":
-  version: 10.2.3
-  resolution: "@storybook/addon-vitest@npm:10.2.3"
-  dependencies:
-    "@storybook/global": "npm:^5.0.0"
-    "@storybook/icons": "npm:^2.0.1"
-  peerDependencies:
-    "@vitest/browser": ^3.0.0 || ^4.0.0
-    "@vitest/browser-playwright": ^4.0.0
-    "@vitest/runner": ^3.0.0 || ^4.0.0
-    storybook: ^10.2.3
-    vitest: ^3.0.0 || ^4.0.0
-  peerDependenciesMeta:
-    "@vitest/browser":
-      optional: true
-    "@vitest/browser-playwright":
-      optional: true
-    "@vitest/runner":
-      optional: true
-    vitest:
-      optional: true
-  checksum: 10c0/5faad4ec39f6e8ab39427506a05338ecdef1dac65642640bf892b32487505919cd7a42040c1d6268779e2c9e1a03b8bfb6504f91aa7f898ff0088a3945968d01
-  languageName: node
-  linkType: hard
-
 "@storybook/builder-vite@npm:10.2.3":
   version: 10.2.3
   resolution: "@storybook/builder-vite@npm:10.2.3"
@@ -2384,7 +2359,6 @@ __metadata:
     "@storybook/addon-a11y": "npm:^10.2.3"
     "@storybook/addon-docs": "npm:^10.2.3"
     "@storybook/addon-onboarding": "npm:^10.2.3"
-    "@storybook/addon-vitest": "npm:^10.2.3"
     "@storybook/global": "npm:^5.0.0"
     "@storybook/react": "npm:^10.2.3"
     "@storybook/react-vite": "npm:^10.2.3"
@@ -2409,10 +2383,11 @@ __metadata:
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     jsdom: "npm:^26.1.0"
+    prettier: "npm:^3.2.4"
     react: "npm:^19.2.0"
     react-dom: "npm:^19.2.0"
+    react-error-boundary: "npm:^6.1.0"
     react-router-dom: "npm:^6.30.3"
-    rickmortyapi: "npm:^2.3.0"
     storybook: "npm:^10.2.3"
     strip-ansi: "npm:^7.1.2"
     styled-components: "npm:^6.3.8"
@@ -6377,6 +6352,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:^3.2.4":
+  version: 3.8.1
+  resolution: "prettier@npm:3.8.1"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10c0/33169b594009e48f570471271be7eac7cdcf88a209eed39ac3b8d6d78984039bfa9132f82b7e6ba3b06711f3bfe0222a62a1bfb87c43f50c25a83df1b78a2c42
+  languageName: node
+  linkType: hard
+
 "pretty-bytes@npm:^5.6.0":
   version: 5.6.0
   resolution: "pretty-bytes@npm:5.6.0"
@@ -6538,6 +6522,15 @@ __metadata:
   peerDependencies:
     react: ^19.2.4
   checksum: 10c0/f0c63f1794dedb154136d4d0f59af00b41907f4859571c155940296808f4b94bf9c0c20633db75b5b2112ec13d8d7dd4f9bf57362ed48782f317b11d05a44f35
+  languageName: node
+  linkType: hard
+
+"react-error-boundary@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "react-error-boundary@npm:6.1.0"
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0
+  checksum: 10c0/943eda25fef9bb70400861506be679d3025fa291ac1665b789d6af886cfb8d8af6c155d1fa6649b19ff45aa40ec9fd88592f169da07beeb74e08e674452932a9
   languageName: node
   linkType: hard
 
@@ -6716,13 +6709,6 @@ __metadata:
   version: 1.4.1
   resolution: "rfdc@npm:1.4.1"
   checksum: 10c0/4614e4292356cafade0b6031527eea9bc90f2372a22c012313be1dcc69a3b90c7338158b414539be863fa95bfcb2ddcd0587be696841af4e6679d85e62c060c7
-  languageName: node
-  linkType: hard
-
-"rickmortyapi@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "rickmortyapi@npm:2.3.0"
-  checksum: 10c0/07b775e202cac4d36ac032c93f545a7275ecc51ba4637eae7ea91b2a20faf7de323c4dc852d93a55105565e63d96ec1b9e12da5b06f000a257273ba269ca8af4
   languageName: node
   linkType: hard
 

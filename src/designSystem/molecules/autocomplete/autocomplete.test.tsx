@@ -30,7 +30,7 @@ describe('Autocomplete', () => {
       wrapper: TestWrapper,
     });
 
-    const input = screen.getByRole('textbox');
+    const input = screen.getByRole('combobox');
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value: 'Ap' } });
 
@@ -45,7 +45,7 @@ describe('Autocomplete', () => {
       wrapper: TestWrapper,
     });
 
-    const input = screen.getByRole('textbox');
+    const input = screen.getByRole('combobox');
     fireEvent.change(input, { target: { value: 'a' } });
 
     expect(handleChange).toHaveBeenCalledWith('a');
@@ -64,7 +64,7 @@ describe('Autocomplete', () => {
       { wrapper: TestWrapper }
     );
 
-    const input = screen.getByRole('textbox');
+    const input = screen.getByRole('combobox');
     fireEvent.focus(input);
 
     const option = screen.getByText('Apple');
@@ -80,9 +80,68 @@ describe('Autocomplete', () => {
       wrapper: TestWrapper,
     });
 
-    const input = screen.getByRole('textbox');
+    const input = screen.getByRole('combobox');
     fireEvent.focus(input);
 
     expect(screen.queryByTestId('suggestions-list')).not.toBeInTheDocument();
+  });
+
+  describe('Keyboard Navigation & ARIA', () => {
+    it('has correct ARIA attributes when closed', () => {
+      render(<Autocomplete value="" onChange={() => {}} options={mockOptions} id="test-acc" />, {
+        wrapper: TestWrapper,
+      });
+
+      const input = screen.getByRole('combobox');
+      expect(input).toHaveAttribute('aria-expanded', 'false');
+      expect(input).toHaveAttribute('aria-haspopup', 'listbox');
+      expect(input).toHaveAttribute('aria-autocomplete', 'list');
+      expect(input).toHaveAttribute('aria-controls', 'test-acc-listbox');
+    });
+
+    it('navigates suggestions with arrow keys', () => {
+      const handleChange = jest.fn();
+      render(<Autocomplete value="A" onChange={handleChange} options={mockOptions} id="test-acc" />, {
+        wrapper: TestWrapper,
+      });
+
+      const input = screen.getByRole('combobox');
+      fireEvent.focus(input);
+      fireEvent.change(input, { target: { value: 'A' } });
+
+      expect(input).toHaveAttribute('aria-expanded', 'true');
+
+      // ArrowDown to first item
+      fireEvent.keyDown(input, { key: 'ArrowDown' });
+      const options = screen.getAllByRole('option');
+      expect(options[0]).toHaveAttribute('aria-selected', 'true');
+      expect(input).toHaveAttribute('aria-activedescendant', 'test-acc-option-0');
+
+      // ArrowDown to next (since there's only one 'A' in mockOptions, it might just stay or loop)
+      // Actually mockOptions has Apple, Banana, Cherry. 'A' matches Apple and Banana.
+      fireEvent.keyDown(input, { key: 'ArrowDown' });
+      expect(options[1]).toHaveAttribute('aria-selected', 'true');
+      expect(input).toHaveAttribute('aria-activedescendant', 'test-acc-option-1');
+
+      // Enter to select
+      fireEvent.keyDown(input, { key: 'Enter' });
+      expect(handleChange).toHaveBeenCalledWith('Banana');
+      expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+    });
+
+    it('closes on Escape key', () => {
+      render(<Autocomplete value="A" onChange={() => {}} options={mockOptions} />, {
+        wrapper: TestWrapper,
+      });
+
+      const input = screen.getByRole('combobox');
+      fireEvent.focus(input);
+      fireEvent.change(input, { target: { value: 'A' } });
+
+      expect(screen.getByRole('listbox')).toBeInTheDocument();
+
+      fireEvent.keyDown(input, { key: 'Escape' });
+      expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+    });
   });
 });

@@ -29,12 +29,14 @@ export const SuggestionsList = styled.ul`
   }
 `;
 
-export const SuggestionItem = styled.li`
+export const SuggestionItem = styled.li<{ $isHighlighted?: boolean }>`
   padding: ${(props) => `${props.theme.spacing.sm} ${props.theme.spacing.md}`};
   cursor: pointer;
   color: ${(props) => props.theme.colors.text};
   transition: background-color 0.2s ease;
   display: flex;
+  background-color: ${(props) =>
+    props.$isHighlighted ? `${props.theme.colors.primary}20` : 'transparent'};
 
   &:hover {
     background-color: ${(props) => props.theme.colors.primary}20; /* 20% opacity */

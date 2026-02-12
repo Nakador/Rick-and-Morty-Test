@@ -6,6 +6,8 @@ import { ReactQueryProvider } from './providers/reactQueryProvider/reactQueryPro
 import { ThemeProviderWrapper } from './providers/themeProvider/ThemeContext';
 import { GlobalStyles } from '../designSystem/styles/globalstyles';
 
+import { ErrorBoundaryProvider } from './providers/errorBoundaryProvider/ErrorBoundaryProvider';
+
 const Backdrop = lazy(() =>
   import('../designSystem/atoms/backdrop/backdrop').then((m) => ({ default: m.Backdrop }))
 );
@@ -20,18 +22,20 @@ const App: React.FC = () => {
   return (
     <ReactQueryProvider>
       <ThemeProviderWrapper>
-        <GlobalStyles />
-        <BrowserRouter>
-          <Suspense fallback={<Backdrop />}>
-            <MainLayout title="Rick & Morty">
-              <Routes>
-                <Route path="/" element={<ListingPage />} />
-                <Route path="/details/:id" element={<DetailsPage />} />
-                <Route path="*" element={<ErrorPage message="Page not found" />} />
-              </Routes>
-            </MainLayout>
-          </Suspense>
-        </BrowserRouter>
+        <ErrorBoundaryProvider>
+          <GlobalStyles />
+          <BrowserRouter>
+            <Suspense fallback={<Backdrop />}>
+              <MainLayout title="Rick & Morty">
+                <Routes>
+                  <Route path="/" element={<ListingPage />} />
+                  <Route path="/details/:id" element={<DetailsPage />} />
+                  <Route path="*" element={<ErrorPage message="Page not found" />} />
+                </Routes>
+              </MainLayout>
+            </Suspense>
+          </BrowserRouter>
+        </ErrorBoundaryProvider>
       </ThemeProviderWrapper>
     </ReactQueryProvider>
   );
