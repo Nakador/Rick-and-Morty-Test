@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { mockApiPlugin } from './mock-api-plugin';
 
 // https://vitejs.dev/config/
 import path from 'node:path';
@@ -9,7 +10,7 @@ const dirname =
   typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), mockApiPlugin()],
   server: {
     port: 3001,
     host: '127.0.0.1',

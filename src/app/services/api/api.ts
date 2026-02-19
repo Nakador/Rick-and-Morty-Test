@@ -3,7 +3,7 @@ import type { Character, Info, ApiResponse, CharacterFilter, CharactersResponse 
 
 export type { Character, CharacterFilter, CharactersResponse };
 
-const BASE_URL = 'https://rickandmortyapi.com/api';
+const BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 export const getCharacters = async <T = Record<string, string | number | boolean>>(
   params?: T
